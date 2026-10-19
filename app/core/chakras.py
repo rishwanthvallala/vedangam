@@ -8,14 +8,13 @@ ordinary sidereal chart and panchanga.
 from __future__ import annotations
 
 from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
 
 from . import ephemeris as E
 from . import panchang as P
 from .chart import BirthInput, SiderealChart
 from .constants import (GRAHAS, NAK_SPAN, NAKSHATRAS, SIGN_LORD, SIGNS, TITHIS, WEEKDAYS,
                         nakshatra_of, norm, sign_of)
-from .geo import local_to_utc
+from .geo import local_to_utc, zone
 from ..i18n import terms, tr
 
 # ---------------------------------------------------------------- 28-nakshatra scheme
@@ -707,7 +706,7 @@ def _now_input(inp, now_jd: float) -> BirthInput:
     if inp.offset is not None:
         local = utc + timedelta(hours=inp.offset)
     else:
-        local = utc.astimezone(ZoneInfo(inp.tz))
+        local = utc.astimezone(zone(inp.tz))
     return BirthInput(inp.name, inp.gender, local.replace(tzinfo=None), inp.lat, inp.lon,
                       inp.tz, inp.offset, inp.place)
 

@@ -3,11 +3,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
-from zoneinfo import ZoneInfo
 
 from . import ephemeris as E
 from .constants import GRAHAS, SIGNS, norm, sign_of
-from .geo import fmt_offset, local_to_utc
+from .geo import fmt_offset, local_to_utc, zone
 
 
 @dataclass
@@ -38,7 +37,7 @@ class BirthInput:
         dt = E.utc_from_jd(jd)
         if self.tz and self.offset is None:
             try:
-                dt = dt.astimezone(ZoneInfo(self.tz))
+                dt = dt.astimezone(zone(self.tz))
             except Exception:
                 dt = dt.astimezone(self.tzinfo)
         else:

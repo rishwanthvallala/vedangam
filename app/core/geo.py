@@ -2,13 +2,37 @@
 resolution through the IANA tz database (handles DST & war-time offsets)."""
 from __future__ import annotations
 
+import io
+import json
 import os
 import unicodedata
+import zipfile
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 DATA = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "cities.tsv")
+# The engine's own copy of the tz database, with each zone's full pre-1970 history (see
+# tools/update_tzdb.py). Operating systems differ here: macOS merges Oslo into Berlin,
+# Amsterdam into Brussels…, Linux does not, so system zones would make results machine-dependent.
+TZDB = os.path.join(os.path.dirname(DATA), "tzdb.zip")
+
+
+@lru_cache(maxsize=1)
+def _tz_aliases() -> dict:
+    with zipfile.ZipFile(TZDB) as z:
+        return json.loads(z.read("links.json"))
+
+
+@lru_cache(maxsize=None)
+def zone(name: str) -> ZoneInfo:
+    """An IANA time zone from the bundled database."""
+    with zipfile.ZipFile(TZDB) as z:
+        try:
+            data = z.read(_tz_aliases().get(name, name))
+        except KeyError:
+            raise ZoneInfoNotFoundError(f"No time zone found with key {name}") from None
+    return ZoneInfo.from_file(io.BytesIO(data), key=name)
 
 
 def _fold(s: str) -> str:
@@ -58,7 +82,7 @@ def search(q: str, limit: int = 12) -> list[dict]:
 
 
 def utc_offset_hours(tz_name: str, local: datetime) -> float:
-    z = ZoneInfo(tz_name)
+    z = zone(tz_name)
     off = local.replace(tzinfo=z).utcoffset()
     return off.total_seconds() / 3600.0
 
@@ -68,7 +92,7 @@ def local_to_utc(local: datetime, tz_name: str | None, offset_hours: float | Non
     if offset_hours is not None:
         utc = (local - timedelta(hours=offset_hours)).replace(tzinfo=timezone.utc)
         return utc, offset_hours, False
-    z = ZoneInfo(tz_name)
+    z = zone(tz_name)
     aware = local.replace(tzinfo=z)
     off = aware.utcoffset().total_seconds() / 3600.0
     dst = bool(aware.dst() and aware.dst().total_seconds())

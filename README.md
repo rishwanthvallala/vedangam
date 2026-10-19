@@ -103,7 +103,7 @@ the open chart.
 | Sunrise | Upper limb with refraction | "Disc centre, no refraction" matches some traditional panchangas |
 | Vedic houses | Whole sign + Sripati bhava chalit; KP uses Placidus | |
 | Chart style | South Indian | North Indian under Calculation settings. Bhava and cuspal charts in South style place each planet in the sign of its house cusp, with cusp numbers marked H1–H12 |
-| Time zone | IANA database, historical DST and war time applied (e.g. India 1942–45 = +6:30) | Use *Override UTC offset* for charts recorded in local mean time or pre-1947 city times (e.g. Calcutta time +5:53:20) |
+| Time zone | IANA database bundled with the engine, with each zone's full pre-1970 history, so every machine and the browser agree; historical DST and war time applied (e.g. India 1942–45 = +6:30) | Use *Override UTC offset* for charts recorded in local mean time or pre-1947 city times (e.g. Calcutta time +5:53:20) |
 
 Small differences from other programs usually come from these settings, especially the node type,
 ayanamsa variant and dasha year length. Shadbala follows BPHS and B.V. Raman's *Graha and Bhava
@@ -148,10 +148,12 @@ app/
   interpret/              text library (JSON) + reading assembly
   data/ephe/              Swiss Ephemeris files (1800–2400 CE)
   data/cities.tsv         GeoNames cities ≥ 5,000 population
+  data/tzdb.zip           IANA tz database 2026e with each zone's full history (tools/update_tzdb.py)
   static/                 web UI (no build step)
 tests/                  engine and module tests; tests/golden/ compares browser vs native
 tools/build_static.py   builds the serverless site into dist/
-vendor/wheels/          pyswisseph compiled to WebAssembly (+ tzdata)
+tools/update_tzdb.py    refreshes data/tzdb.zip from a newer tz release
+vendor/wheels/          pyswisseph compiled to WebAssembly
 ```
 
 Readings are traditional interpretive text keyed to chart factors. Treat them as guidance, not

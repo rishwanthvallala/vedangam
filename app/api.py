@@ -141,10 +141,10 @@ def dasha_calendar(req: dict) -> dict:
 def now(q: dict) -> dict:
     """Sky right now: sidereal positions and today's panchanga at a place."""
     _lang(q)
-    from zoneinfo import ZoneInfo
+    from .core.geo import zone
     lat, lon = float(q.get("lat", 17.38405)), float(q.get("lon", 78.45636))
     tz, label = q.get("tz") or "Asia/Kolkata", q.get("label") or ""
-    local = utcnow().astimezone(ZoneInfo(tz)).replace(tzinfo=None, microsecond=0)
+    local = utcnow().astimezone(zone(tz)).replace(tzinfo=None, microsecond=0)
     b = BirthInput(name="", gender="", local_dt=local, lat=lat, lon=lon, tz=tz, place=label)
     ch = SiderealChart(b)
     pan = P.compute(ch, b)

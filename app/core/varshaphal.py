@@ -14,13 +14,13 @@ Tithi Pravesha
 from __future__ import annotations
 
 from datetime import timedelta
-from zoneinfo import ZoneInfo
 
 from . import ephemeris as E
 from .chart import BirthInput, SiderealChart
 from .constants import (DASHA_ORDER, DASHA_YEARS, DEBILITATION, GRAHAS,
                         NAK_SPAN, NAKSHATRAS, SEVEN, SIGN_LORD, SIGNS, TITHIS, WEEKDAY_LORD,
                         WEEKDAYS, deg_in_sign, dms, nakshatra_of, norm, sign_of)
+from .geo import zone
 from .prashna import tajika_relation
 from .vargas import varga_sign
 from .vedic import combustion, natural_relation
@@ -151,7 +151,7 @@ def _input_at(jd: float, inp: BirthInput, spec: dict) -> BirthInput:
     if spec["offset"] is not None:
         local = (utc + timedelta(hours=spec["offset"])).replace(tzinfo=None)
     else:
-        local = utc.astimezone(ZoneInfo(spec["tz"])).replace(tzinfo=None)
+        local = utc.astimezone(zone(spec["tz"])).replace(tzinfo=None)
     b = BirthInput(inp.name, inp.gender, local, spec["lat"], spec["lon"], spec["tz"],
                    spec["offset"], spec["label"])
     b.jd, b.utc = jd, utc            # keep the exact instant (no DST-fold / rounding drift)
@@ -161,7 +161,7 @@ def _input_at(jd: float, inp: BirthInput, spec: dict) -> BirthInput:
 def _utc_offset_hours(jd: float, spec: dict) -> float:
     if spec["offset"] is not None:
         return spec["offset"]
-    off = E.utc_from_jd(jd).astimezone(ZoneInfo(spec["tz"])).utcoffset()
+    off = E.utc_from_jd(jd).astimezone(zone(spec["tz"])).utcoffset()
     return off.total_seconds() / 3600.0
 
 

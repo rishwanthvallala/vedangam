@@ -13,7 +13,6 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
-import subprocess
 import sys
 import urllib.request
 import zipfile
@@ -44,14 +43,10 @@ def vendor_runtime() -> tuple[Path, list[Path]]:
     pyo = VENDOR / f"pyodide-{PYODIDE_VERSION}"
     for name in PYODIDE_FILES:
         download(PYODIDE_CDN + name, pyo / name)
-    wheels = VENDOR / "wheels"
-    if not list(wheels.glob("tzdata-*.whl")):
-        subprocess.run([sys.executable, "-m", "pip", "download", "-q", "tzdata", "--only-binary", ":all:",
-                        "--no-deps", "-d", str(wheels)], check=True)
-    swe = sorted(wheels.glob("pyswisseph-*wasm32.whl"))
+    swe = sorted((VENDOR / "wheels").glob("pyswisseph-*wasm32.whl"))
     if not swe:
         sys.exit("vendor/wheels has no pyswisseph WebAssembly wheel; run tools/build_pyswisseph_wasm.sh")
-    return pyo, [swe[-1], sorted(wheels.glob("tzdata-*.whl"))[-1]]
+    return pyo, [swe[-1]]
 
 
 def engine_zip(dest: Path):
@@ -61,6 +56,7 @@ def engine_zip(dest: Path):
     include += sorted((APP / "interpret").rglob("*.py")) + sorted((APP / "interpret").rglob("*.json"))
     include += sorted((APP / "i18n").rglob("*.py")) + sorted((APP / "i18n").rglob("*.json"))
     include += sorted((APP / "data" / "ephe").glob("*.se1"))
+    include += [APP / "data" / "tzdb.zip"]
     with zipfile.ZipFile(dest, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for f in include:
             z.write(f, f.relative_to(ROOT).as_posix())
