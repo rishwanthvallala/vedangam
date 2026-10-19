@@ -23,11 +23,12 @@ jobs:
         with:
           node-version: "22"
       - run: pip install -r requirements.txt
-      - name: Build and verify against the native engine
-        run: |
-          python tools/build_static.py
-          python -m tests.golden.run_native tests/golden/out/native.json
-          node tests/golden/check_browser.mjs tests/golden/out/native.json dist
+      - name: Build the static site
+        run: python tools/build_static.py
+      - name: Run the golden cases on the native engine
+        run: python -m tests.golden.run_native tests/golden/out/native.json
+      - name: Verify the browser engine matches the native engine
+        run: node tests/golden/check_browser.mjs tests/golden/out/native.json dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

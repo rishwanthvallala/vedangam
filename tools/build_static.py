@@ -117,4 +117,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:   # surface the reason as a GitHub annotation
+        import os
+        import traceback
+        traceback.print_exc()
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::error title=Static build failed::{type(e).__name__}: {e}")
+        sys.exit(1)

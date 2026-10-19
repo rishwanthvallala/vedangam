@@ -54,7 +54,15 @@ for (const c of cases) {
   const out = [];
   if (got.status !== want.status) out.push(`status ${want.status} vs ${got.status}: ${JSON.stringify(got.body).slice(0, 200)}`);
   else diff(want.body, got.body, "", out);
-  if (out.length) { fail++; console.log(`FAIL ${c.id}\n   ${out.join("\n   ")}`); } else pass++;
+  if (out.length) {
+    fail++;
+    console.log(`FAIL ${c.id}\n   ${out.join("\n   ")}`);
+    if (process.env.GITHUB_ACTIONS && fail <= 15)
+      console.log(`::error title=Golden mismatch ${c.id}::${out.join(" | ").replace(/\n/g, " ").slice(0, 900)}`);
+  } else pass++;
 }
+if (process.env.GITHUB_STEP_SUMMARY)
+  fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
+    `### Browser engine vs native engine\n\n${pass} of ${cases.length} golden cases identical (tolerance ${TOL}°), ${fail} different.\n`);
 console.log(`\n${pass} identical, ${fail} different, out of ${cases.length} cases (${((Date.now() - t1) / 1000).toFixed(1)}s)`);
 process.exit(fail ? 1 : 0);
