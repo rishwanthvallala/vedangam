@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jyotish Studio</title>
+<meta name="description" content="Precise Vedic, KP, Jaimini, Prashna and Western chart calculations with in-depth analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Symbols&family=Noto+Sans+Symbols+2&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%2323408E' stroke-width='2.4'%3E%3Crect x='2' y='2' width='28' height='28'/%3E%3Cpath d='M9 2V30M23 2V30M2 9H30M2 23H30M16 2V9M16 23V30M2 16H9M23 16H30M9 9H23V23H9Z'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="lagna" x="9" y="2" width="7" height="7"/><rect x="2" y="2" width="28" height="28"/><path d="M9 2V30M23 2V30M2 9H30M2 23H30M16 2V9M16 23V30M2 16H9M23 16H30M9 9H23V23H9Z"/></svg>
+    <div>
+      <h1>Jyotish Studio</h1>
+      <p class="tagline">Swiss Ephemeris precision for Parashari, KP, Jaimini, Prashna and Western charts</p>
+    </div>
+  </div>
+  <div class="mast-actions">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="ghost" data-lang="en" lang="en">English</button>
+      <button type="button" class="ghost" data-lang="te" lang="te">తెలుగు</button>
+    </div>
+    <button type="button" class="ghost" id="themeToggle" aria-label="Toggle dark mode">Dark mode</button>
+  </div>
+</header>
+
+<div class="engine-bar" id="engineBar" role="status" hidden></div>
+<main class="layout">
+  <aside class="panel" id="panel">
+    <form id="birthForm" autocomplete="off" novalidate>
+      <fieldset class="methods">
+        <legend>Method</legend>
+        <div class="method-list" id="methodList"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend id="detailsLegend">Birth details</legend>
+        <div class="row two birth-only">
+          <label>Name<input name="name" id="f_name" placeholder="Full name"></label>
+          <label>Gender
+            <select name="gender" id="f_gender">
+              <option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option>
+            </select>
+          </label>
+        </div>
+        <div class="row two birth-only">
+          <label><span id="dateLabel">Date of birth</span><input type="date" name="date" id="f_date" required></label>
+          <label><span id="timeLabel">Time of birth</span><input type="time" step="1" name="time" id="f_time" required></label>
+        </div>
+        <button type="button" class="link hidden" id="setNow">Use the current time</button>
+        <label class="place-field"><span id="placeLabel">Place of birth</span>
+          <input name="place" id="f_place" placeholder="Start typing a city, e.g. Hyderabad" role="combobox" aria-expanded="false" aria-controls="placeList" aria-autocomplete="list">
+          <ul class="place-list" id="placeList" role="listbox" hidden></ul>
+        </label>
+        <div class="geo-line" id="geoLine">No place selected</div>
+        <details class="geo-edit">
+          <summary>Edit coordinates and time zone</summary>
+          <div class="row three">
+            <label>Latitude<input type="number" step="0.0001" id="f_lat" placeholder="17.385"></label>
+            <label>Longitude<input type="number" step="0.0001" id="f_lon" placeholder="78.4867"></label>
+            <label>Time zone<input id="f_tz" placeholder="Asia/Kolkata"></label>
+          </div>
+          <label class="check"><input type="checkbox" id="f_useOffset"> Override UTC offset (hours)</label>
+          <input type="number" step="0.25" id="f_offset" placeholder="5.5" disabled>
+          <p class="hint">Historical daylight-saving and war-time offsets are applied automatically from the time-zone database. Override only for charts recorded in local mean time.</p>
+        </details>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="kp_horary">
+        <legend>Horary question</legend>
+        <div class="row two">
+          <label>Number (1–249)<input type="number" min="1" max="249" id="f_horary" value="1"></label>
+          <label>Matter<select id="f_hq"></select></label>
+        </div>
+        <button type="button" class="link" id="randomHorary">Pick a number at random</button>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="varshaphal">
+        <legend>Annual chart</legend>
+        <div class="row two">
+          <label>Year<input type="number" min="1900" max="2100" id="f_vyear"></label>
+          <span></span>
+        </div>
+        <label class="place-field"><span>Current residence (optional)</span>
+          <input id="f_res" placeholder="Leave empty to use the birth place" role="combobox" aria-expanded="false" aria-controls="resList" aria-autocomplete="list">
+          <ul class="place-list" id="resList" role="listbox" hidden></ul>
+        </label>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="matching">
+        <legend>Partner's details</legend>
+        <div class="row two">
+          <label>Name<input id="p_name" placeholder="Full name"></label>
+          <label>Gender<select id="p_gender"><option value="Female">Female</option><option value="Male">Male</option></select></label>
+        </div>
+        <div class="row two">
+          <label>Date of birth<input type="date" id="p_date"></label>
+          <label>Time of birth<input type="time" step="1" id="p_time"></label>
+        </div>
+        <label class="place-field"><span>Place of birth</span>
+          <input id="p_place" placeholder="Start typing a city, e.g. Hyderabad" role="combobox" aria-expanded="false" aria-controls="pList" aria-autocomplete="list">
+          <ul class="place-list" id="pList" role="listbox" hidden></ul>
+        </label>
+        <div class="geo-line" id="pGeo">No place selected</div>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="muhurta">
+        <legend>Muhurta search</legend>
+        <label>Event<select id="m_event"></select></label>
+        <div class="row two">
+          <label>From date<input type="date" id="m_start"></label>
+          <label>Days to search<input type="number" min="1" max="90" value="30" id="m_days"></label>
+        </div>
+        <label class="check"><input type="checkbox" id="m_native"> Use my birth details for Tara and Chandra bala</label>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="calendar">
+        <legend>Panchanga calendar</legend>
+        <label>Month<input type="month" id="c_month"></label>
+      </fieldset>
+
+      <fieldset class="method-extra" data-for="prashna">
+        <legend>Prashna question</legend>
+        <div class="row two">
+          <label>Matter<select id="f_pq"></select></label>
+          <label>Arudha number (1–108, optional)<input type="number" min="1" max="108" id="f_pnum" placeholder="—"></label>
+        </div>
+      </fieldset>
+
+      <details class="settings">
+        <summary>Calculation settings</summary>
+        <div class="row two">
+          <label>Ayanamsa<select id="o_ayanamsa"><option value="">Default for method</option></select></label>
+          <label>Rahu / Ketu<select id="o_node"><option value="">Default</option><option value="mean">Mean node</option><option value="true">True node</option></select></label>
+        </div>
+        <div class="row two">
+          <label>Indian chart style<select id="o_style"><option value="south" selected>South Indian</option><option value="north">North Indian</option></select></label>
+          <label>Dasha year<select id="o_year"><option value="365.25">365.25 days</option><option value="365.2425">365.2425 (Gregorian)</option><option value="365.2564">365.2564 (sidereal)</option><option value="360">360 (savana)</option></select></label>
+        </div>
+        <div class="row two">
+          <label>Sunrise<select id="o_sunrise"><option value="standard">Upper limb + refraction</option><option value="hindu">Disc centre, no refraction</option></select></label>
+          <label>Chara karakas<select id="o_karakas"><option value="8">8 (with Rahu)</option><option value="7">7 (Sun–Saturn)</option></select></label>
+        </div>
+        <div class="row two">
+          <label>Western houses<select id="o_hsys"></select></label>
+          <label>Western zodiac<select id="o_zodiac"><option value="tropical">Tropical (Sayana)</option><option value="sidereal">Sidereal</option></select></label>
+        </div>
+        <div class="row two">
+          <label>KP house rotation<select id="o_rotate">
+            <option value="1">None (natal)</option><option value="2">2nd as 1st</option><option value="3">3rd as 1st (siblings)</option>
+            <option value="4">4th as 1st (mother)</option><option value="5">5th as 1st (children)</option><option value="6">6th as 1st</option>
+            <option value="7">7th as 1st (spouse)</option><option value="8">8th as 1st</option><option value="9">9th as 1st (father)</option>
+            <option value="10">10th as 1st</option><option value="11">11th as 1st (elder sibling)</option><option value="12">12th as 1st</option>
+          </select></label>
+          <label>KP rectification window<select id="o_rectify"><option value="30">± 30 minutes</option><option value="60" selected>± 60 minutes</option><option value="120">± 2 hours</option></select></label>
+        </div>
+        <label class="check"><input type="checkbox" id="o_minor" checked> Include minor aspects</label>
+        <label>Logo on screen and printouts<input type="file" accept="image/*" id="o_logo"></label>
+        <button type="button" class="link" id="o_logo_clear">Remove the logo</button>
+      </details>
+
+      <div class="form-actions">
+        <button type="submit" class="primary" id="castBtn">Cast chart</button>
+        <button type="button" class="ghost" id="saveBtn">Save</button>
+      </div>
+      <p class="form-error" id="formError" role="alert" hidden></p>
+    </form>
+
+    <section class="saved" id="savedBox" hidden>
+      <h2>Saved charts</h2>
+      <ul id="savedList"></ul>
+      <details class="search-box">
+        <summary>Search saved charts</summary>
+        <label>Find charts with<select id="s_kind">
+          <option value="yoga">A yoga or dosha</option>
+          <option value="planet_sign">A planet in a sign</option>
+          <option value="planet_house">A planet in a house</option>
+          <option value="dignity">A planet's dignity</option>
+          <option value="lagna">A Lagna sign</option>
+          <option value="moon_nakshatra">A Moon nakshatra</option>
+          <option value="dasha_now">A running Mahadasha</option>
+        </select></label>
+        <div class="row two">
+          <label id="s_planet_l">Planet<select id="s_planet"></select></label>
+          <label>Value<input id="s_value" list="s_values" placeholder="e.g. Gaja Kesari"><datalist id="s_values"></datalist></label>
+        </div>
+        <button type="button" class="ghost" id="s_go">Search</button>
+        <ul id="s_results" class="search-results"></ul>
+      </details>
+    </section>
+  </aside>
+
+  <section class="results" id="results" aria-live="polite">
+    <div class="empty" id="emptyState">
+      <svg class="empty-chart" viewBox="0 0 400 400" aria-hidden="true"><rect x="4" y="4" width="392" height="392"/><path d="M102 4V396M298 4V396M4 102H396M4 298H396M200 4V102M200 298V396M4 200H102M298 200H396M102 102H298V298H102Z"/></svg>
+      <h2>Cast a chart to begin</h2>
+      <p>Choose a method, enter the date, time and place, and Jyotish Studio computes planetary positions with the Swiss Ephemeris, the same engine used by Jagannatha Hora and most professional software.</p>
+      <div id="skyNow" class="sky-now"></div>
+      <ul class="empty-points">
+        <li><strong>Parashari</strong> positions, 16 vargas, Shadbala, Ashtakavarga, yogas and Vimshottari to five levels.</li>
+        <li><strong>KP</strong> star, sub and sub-sub lords, Placidus cusps, four-level significators, ruling planets and event timing.</li>
+        <li><strong>KP Horary, Prashna, Jaimini and Western</strong>, each with its own tables and interpretation.</li>
+      </ul>
+    </div>
+    <div id="output" hidden></div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p><span>Planetary positions: Swiss Ephemeris © Astrodienst AG, used under the AGPL. City data: GeoNames (CC BY 4.0).</span> <span id="privacyNote" hidden>Calculations run entirely in your browser; nothing you enter is sent anywhere.</span></p>
+</footer>
+
+<template id="tplLoading"><div class="loading"><svg viewBox="0 0 400 400" class="loading-chart" aria-hidden="true"><rect x="4" y="4" width="392" height="392"/><path d="M102 4V396M298 4V396M4 102H396M4 298H396M200 4V102M200 298V396M4 200H102M298 200H396M102 102H298V298H102Z"/></svg><p>Calculating…</p></div></template>
+
+<script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+{
+ "pairs": {
+  "Sun|Moon": {
+   "flow": "Your conscious will and your emotional needs pull in the same direction, so you rarely feel divided about what you want. Decisions feel natural, moods support your goals, and others find you coherent and easy to read. Guard against assuming everyone shares your inner harmony.",
+   "tension": "What you want and what you need do not match, as if two people shared one life. Career or ambition may pull away from home and feeling, or one parent's influence conflicts with the other's. Maturity comes from honouring both instead of letting one side win by default.",
+   "fusion": "You were born close to a new moon, so will and feeling fuse into one strong impulse. You are subjective and instinctive, trusting your gut and acting on it. Single-mindedness gives you drive, but objectivity about yourself is hard to come by."
+  },
+  "Sun|Mercury": {
+   "flow": "Your mind serves your sense of self well. You think clearly about who you are, explain yourself easily and learn fast when interested. Teaching, writing and persuasion come naturally, and your opinions feel like an honest expression of your character rather than a performance.",
+   "tension": "This is the angle of a mind and ego that are slightly out of step. You may speak before your thinking is finished, defend ideas as though they were your identity, or dismiss criticism too quickly. Learning to separate being wrong from being diminished frees your intelligence.",
+   "fusion": "Mercury sits so close to the Sun that your thoughts and identity are almost the same thing. You talk about yourself readily and your opinions carry personal weight. Strong focus and conviction result, though you may struggle to see problems from a neutral standpoint."
+  },
+  "Sun|Venus": {
+   "flow": "Charm and self-assurance go hand in hand. You enjoy being liked, express affection warmly, and have a sense of style that suits your personality. Relationships tend to support your confidence, and creative or social ventures bring you pleasure without much strain.",
+   "tension": "You may seek approval so strongly that you bend your identity around it, or you may chase pleasure when you should be committing to goals. Questions of self-worth surface through love, money and appearance. Valuing yourself without applause is the lesson.",
+   "fusion": "Venus is always within about 48 degrees of the Sun, and here the two are tightly joined. Your personality is sociable, affectionate and aesthetically tuned. Being loved matters deeply, so you shine in company, but you may avoid conflict to protect the pleasant mood."
+  },
+  "Sun|Mars": {
+   "flow": "Vitality and willpower back each other up. You act on your decisions with energy, handle competition well and recover quickly from setbacks. Others see you as capable and determined. Physical activity is a natural outlet that keeps this strength constructive rather than aggressive.",
+   "tension": "Your drive can turn into aggression, and your pride clashes with rivals, bosses or your own impatience. Anger flares quickly when you feel challenged. You are strongest when competing with a worthwhile goal and weakest when proving yourself through conflict. Exercise helps considerably.",
+   "fusion": "Identity and aggression are fused, giving you courage, stamina and a strong need to take the lead. You prefer doing to deliberating. Others may find you blunt or domineering, and you can burn out by never conceding a point. Direct the force toward real challenges."
+  },
+  "Sun|Jupiter": {
+   "flow": "Optimism and good fortune seem to follow you. You inspire trust, think generously and often find help or opportunity at the right moment. Teaching, travel, law, publishing and philanthropy suit you. The only danger is expecting luck to substitute for effort.",
+   "tension": "Your enthusiasm outruns your resources. You promise too much, spend too freely or let confidence harden into preaching. Being sure you are right can blind you to details. Realistic planning keeps your genuine big-heartedness from becoming extravagance or inflated claims.",
+   "fusion": "Faith in yourself and in life is built into your character. You think big, express generosity naturally and attract attention for your warmth and vision. Reputation tends to grow over time. Watch for excess and the assumption that things will always work out."
+  },
+  "Sun|Saturn": {
+   "flow": "Responsibility feels natural to you, and authority, whether given or earned, rests on solid ground. You build confidence slowly through competence, respect rules that make sense and show remarkable endurance. Mature beyond your years, you often become more at ease with yourself as you age.",
+   "tension": "Authority is the central issue: a stern or absent father, harsh critics, or an inner voice that says you are never good enough. Self-doubt and over-work are common in youth. Confidence arrives late but proves durable once you stop waiting for permission.",
+   "fusion": "Identity and discipline are welded together. You feel the weight of duty early, take yourself seriously and may seem reserved. The gifts are patience, integrity and real achievement in later life. The cost is self-criticism, so deliberately allow yourself lightness and rest."
+  },
+  "Sun|Uranus": {
+   "flow": "Individuality is easy for you. You break with convention without making a fuss, welcome new ideas and bring freshness to whatever group you join. Friends are varied and loyal to your originality. Your lifestyle changes smoothly when it needs to, rarely leaving you stranded.",
+   "tension": "Freedom and identity are at war. You may rebel against any restriction, change direction abruptly or provoke others to prove your independence. Relationships and jobs feel confining. The task is to be unique without needing to shock, committing long enough to see results.",
+   "fusion": "A distinctive, unpredictable character is built in. You think differently, resist being told what to do and feel destined for an unusual path. Others see you as eccentric or ahead of your time. Nervous tension and sudden life changes need grounding routines."
+  },
+  "Sun|Neptune": {
+   "flow": "Imagination and compassion colour your identity. You are creative, intuitive and sensitive to atmosphere, with talent for music, film, healing or spiritual work. People confide in you. You take a gentle route to self-expression, and trust in something larger supports you.",
+   "tension": "Your sense of self is hard to pin down. You may idealise people and then be disappointed, drift without clear goals or lose yourself in others' needs. Escape through fantasy or substances tempts. Define concrete aims and boundaries so your sensitivity becomes a strength.",
+   "fusion": "Self and dream overlap. You are impressionable, artistic and compassionate, often feeling like a vessel for something larger. Clear ambition is harder to find, and others may project ideals onto you. Creative or spiritual discipline gives your gifts a form."
+  },
+  "Sun|Pluto": {
+   "flow": "You handle power and crisis with composure. Depth comes easily, and you can transform situations, people or yourself without drama. Others sense your strength and resilience. Research, psychology, finance and leadership suit you. Use the influence ethically and it multiplies.",
+   "tension": "Power struggles recur: control by others, or your own need to dominate. You test yourself through intense confrontations and periodic personal collapses. Each crisis demands that you release an outgrown identity. Learning to share power rather than guard it ends the cycle.",
+   "fusion": "Intensity defines you. Strong will, secrecy and magnetism come as a set, and you either rebuild yourself repeatedly or reshape your surroundings. Others feel your presence even in silence. Obsession and suspicion are the risks; transformation is the reward."
+  },
+  "Sun|Chiron": {
+   "flow": "Your wounds have become a source of identity and warmth. You use hard-won understanding to help others feel seen, and your authenticity comes partly from admitting vulnerability. Teaching, counselling and mentoring suit you, and self-acceptance deepens with time.",
+   "tension": "A persistent sense of not being good enough or of not belonging may underlie your confidence. Criticism strikes old wounds, often tied to father or early recognition. Healing comes when you stop hiding the sore spot and let your imperfection become part of your story.",
+   "fusion": "Identity and pain are intertwined. You may have felt unseen or inadequate early on, and strive to prove your worth. The same history gives you rare empathy and a gift for guiding others through difficulty. Self-compassion is the key practice."
+  },
+  "Sun|North Node": {
+   "flow": "Your natural talents point you toward your growth path. Following your personality, rather than pleasing others, tends to bring you in line with your purpose. Opportunities for recognition arrive when you act authentically, and you feel supported by circumstance.",
+   "tension": "Your ego and your direction sometimes disagree. Familiar roles and habits are comfortable but do not lead where you need to go. Growth requires acting from awareness rather than pride, and accepting unfamiliar tasks. The discomfort is a sign you are moving.",
+   "fusion": "Your sense of self and life direction are bound together. Developing your confidence, leadership and creative voice is the main theme. You feel pulled toward visibility, and meeting people who mirror your potential becomes important. Beware of leaning on pride."
+  },
+  "Sun|Ascendant": {
+   "flow": "Your outer manner reflects who you truly are, so first impressions are reliable. Others see the confidence and character you feel inside, and you rarely need to explain yourself. Friends and colleagues respond to your vitality. Life feels coherent and self-directed.",
+   "tension": "There is a gap between how you appear and how you feel. You may play a role that hides your real aims, or others misjudge you on first meeting. Understanding the difference helps you be more consistent. Sun-opposite-Ascendant also shows the need to learn from partners.",
+   "fusion": "You were born near sunrise, so identity and appearance are nearly one. Presence, vitality and a strong personal style define you. You act as you feel, which makes you memorable. Your self-focus can seem overbearing; remember to ask others about their view."
+  },
+  "Sun|Midheaven": {
+   "flow": "Your character fits your public role. People recognise your abilities, and a career in which you can be yourself tends to develop. Authority comes naturally, and being seen suits you. Support from mentors or superiors helps, provided you stay true to your own aims.",
+   "tension": "Personal identity and career expectations conflict. You may feel pressed into a role that does not match your inner purpose, or your ambition overrides private life. Work-life balance and answering to authority are recurring themes. Aligning vocation with values resolves it.",
+   "fusion": "You are meant to be visible. Your identity and your career path are almost the same, so work is a primary stage for self-expression. Ambition is strong and recognition feels necessary. When career falters, so does self-esteem; keep other roots."
+  },
+  "Moon|Mercury": {
+   "flow": "You can put feelings into words, and your thoughts are informed by instinct. Listening, remembering and talking things through come easily, which helps in counselling, writing and teaching. Your mind and mood cooperate, so you rarely feel stranded between what you know and what you sense.",
+   "tension": "Head and heart give different answers. You may overthink feelings, rationalise emotions away, or talk anxiously when upset. Worry can keep you awake. Writing things down and separating facts from reactions helps you decide, and you learn to trust both inputs in turn.",
+   "fusion": "Thinking and feeling share one channel, so you speak from emotion and feel your thoughts. Your memory is vivid and you pick up moods through conversation. You may be talkative when anxious. Separating what you think from how you feel brings clarity."
+  },
+  "Moon|Venus": {
+   "flow": "Affection comes easily to you, and you create comfort wherever you are. You are tactful, considerate and appreciated by others. Home tends to be attractive and peaceful, and love relationships feel emotionally nourishing. Enjoy it without avoiding every difficult conversation.",
+   "tension": "Needs for security and desire for pleasure compete. You may seek comfort in food, spending or relationships that soothe but do not satisfy. Mixed feelings about intimacy or dependence on affection can arise. Learning what you really need, as opposed to what feels good now, helps.",
+   "fusion": "Emotional warmth and love of beauty merge. You are gentle, sociable and sensitive to atmosphere, and you need harmony to feel secure. Affection and comfort matter greatly. You can be too eager to please, so say what you need before resentment builds."
+  },
+  "Moon|Mars": {
+   "flow": "Your feelings spur you to act. You protect what you love, defend yourself directly and recover from upsets with energy. Passion is expressed openly, and you rarely sit on resentment for long. Physical activity and honest argument keep emotions healthy.",
+   "tension": "Emotions and aggression collide. Irritability, quick tempers and defensiveness show up, often linked to a childhood where anger was either loud or forbidden. You may react before you feel. Pausing to name the feeling, then choosing a response, turns reactivity into courage.",
+   "fusion": "You feel intensely and act on feelings immediately. Passion, protectiveness and a short fuse arrive together, and you take things personally. Your courage in defending loved ones is a real asset. Learn to cool off before speaking, since your first reaction is rarely your last."
+  },
+  "Moon|Jupiter": {
+   "flow": "Generosity and emotional optimism come naturally. You feel secure, trust that things will work out and share your warmth freely. Others find you encouraging, and home is a place of abundance. Faith or a larger sense of meaning steadies you in hard times.",
+   "tension": "Feelings swell beyond their cause. You may overindulge in food, comfort or promises, or expect too much from family and home. Emotional excess can mean exaggerated hopes then disappointment. Moderation and realistic expectations keep your kindness from becoming smothering.",
+   "fusion": "Your emotional nature is large, warm and hopeful. You absorb a lot, give generously and tend to think things will turn out well. Family and home matter and may bring good fortune. The risks are overeating, overspending and over-caring, so build gentle limits."
+  },
+  "Moon|Saturn": {
+   "flow": "You manage feelings with maturity. Reliable and calm, you give emotional support through steady presence rather than display. You take care of responsibilities and build security patiently. Family duties may be shouldered willingly, and you grow more relaxed with age.",
+   "tension": "Emotional coldness or deprivation in childhood may linger: a withholding mother, early duties or a sense of not being allowed to need things. Depression, fear of rejection and over-control follow. Learning to accept warmth and to ask for help gradually thaws the pattern.",
+   "fusion": "Feelings are held tightly. You may seem reserved yet feel deeply, with security and responsibility entwined from early life. Self-reliance is your strength, loneliness the risk. Allow yourself comfort without earning it first, and let trusted people see your softer side."
+  },
+  "Moon|Uranus": {
+   "flow": "You adapt emotionally to change and enjoy unusual people and experiences. Intuition flashes accurately, and you are comfortable giving others space. Home life can be unconventional yet works for you. Independence and closeness coexist better than they do for most.",
+   "tension": "Emotional security and freedom conflict. Moods swing suddenly, relationships feel suffocating or abruptly end, and home life may be unsettled. You may fear dependence and push people away at moments of need. Building steady routines gives your independence a safe base.",
+   "fusion": "Your feelings are unpredictable, original and electric. You need space, resist emotional clinging and may have had an irregular upbringing. Nervous energy and sudden changes of heart are common. Learn to stay present with feelings instead of cutting off from them."
+  },
+  "Moon|Neptune": {
+   "flow": "Compassion and intuition flow together. You sense what others feel, respond with gentle imagination and may be gifted in music, art or caring work. Dreams are vivid. Spiritual or creative practice nourishes you, and empathy draws loyal friends.",
+   "tension": "Boundaries blur. You absorb others' moods, idealise family, or retreat into fantasy and avoidance when stressed. Confusion about what you actually feel is common, and escape through sleep, alcohol or romance tempts. Quiet time, clear limits and honest routines keep you anchored.",
+   "fusion": "You are a psychic sponge. Moods, atmospheres and other people's pain pass straight into you, which feeds artistry and compassion but makes you fragile. Childhood may have seemed unreal or unstable. Creative expression and solitude prevent overwhelm."
+  },
+  "Moon|Pluto": {
+   "flow": "You meet emotional depths without panic. Crisis brings out your resilience, and you regenerate after loss. Others trust you with secrets, and therapy, research or healing work suit you. Strong instincts guide you well when you listen to them.",
+   "tension": "Emotional power struggles mark family and close bonds. Jealousy, possessiveness, buried anger or fear of abandonment can erupt, often rooted in an intense early home. Facing the buried material, ideally with support, converts that force into emotional strength rather than control.",
+   "fusion": "Feelings run deep and absolute. You love and hate intensely, hold on to emotions and rarely forget a slight. Family history may involve secrets or crises. The reward is remarkable emotional endurance. Learn to release what you cannot control."
+  },
+  "Moon|Chiron": {
+   "flow": "Your own hurts make you gentle with others. You offer nurture that feels genuine, often to people others overlook, and caring professions suit you. Experience taught you how to soothe. Self-care grows as you let yourself receive what you give.",
+   "tension": "Early nurture left a tender spot: feeling unwelcome, over-responsible or emotionally unseen. You may nurture everyone but yourself, or flinch from closeness. When you give yourself the care you give others, old pain softens instead of repeating.",
+   "fusion": "Emotional wounding and sensitivity coincide. Memories of insecurity or rejection in the family surface readily, and you react strongly to similar signals. This sensitivity can also become a gift for caring and healing. Self-compassion is the practice that matters."
+  },
+  "Moon|North Node": {
+   "flow": "Your instincts support your growth. Trusting feelings and caring for others leads to the right people and places, and nurturing roles come with ease. Family or community provide help along your path. Comfort and development work together.",
+   "tension": "Your emotional habits resist your direction. Familiar comforts, family patterns and old security-seeking keep you where you are, while life asks for something new. Growth means feeling the discomfort of change without retreating to what is known.",
+   "fusion": "Emotional needs and life purpose are linked. Caring, belonging and nurturing are central themes, and you grow through relationships with women, family or the public. Feeling safe while changing is the lesson; do not hide in comfort."
+  },
+  "Moon|Ascendant": {
+   "flow": "Your feelings show naturally in how you present yourself. People find you approachable and sense your mood accurately, which builds trust. Your reactions are honest, and you adjust easily to company. Emotional and outward life are well aligned.",
+   "tension": "Your inner feelings and outer persona differ. You may show calm while worried, or appear needy when you want independence. Others find your signals confusing. Relationships often expose the inner mood, helping you recognise what you actually feel.",
+   "fusion": "Your emotions sit on the surface. Moods are visible, you respond quickly to the environment and others feel your warmth or discomfort at once. Sensitivity is part of your first impression. Protect yourself without hiding."
+  },
+  "Moon|Midheaven": {
+   "flow": "Public life suits your emotional nature. You connect with audiences, clients or customers, and feel supported in a role that involves caring, feeding, teaching or serving. Reputation grows through trust, and your mother or home life may help your career.",
+   "tension": "Home and career demand different things. You may feel torn between family and ambition, or your work leaves little emotional room. Public moods can shake you. Balance comes from deciding what home must be, then protecting that.",
+   "fusion": "Your emotional life and public role are blended. You may work with the public, with caring or domestic matters, and your moods influence your reputation. Visibility feels personal. Choose work that satisfies your feelings, or fatigue follows."
+  },
+  "Mercury|Venus": {
+   "flow": "Your speech is pleasant and persuasive. You choose words with tact, enjoy conversation and have an eye for design, music or poetry. Negotiation, writing and diplomacy suit you. Others like listening to you, though you may soften hard truths more than necessary.",
+   "tension": "Tact and truth sometimes disagree. You may say what people want to hear, delay awkward talks, or let taste override practical judgment. Disagreements about money or affection can feel like personal critiques. Honest, kind speech is the skill to develop.",
+   "fusion": "Mind and taste share a single voice. You communicate gracefully, think in terms of harmony and are drawn to words, art and sociable exchange. Conflict feels unpleasant, so you smooth things over. Make sure charm does not replace substance."
+  },
+  "Mercury|Mars": {
+   "flow": "Quick thinking and decisiveness work together. You debate well, spot weaknesses and act on ideas before they cool. Technical skills, sales, journalism and problem solving suit you. Your mind stays energised under pressure, and you speak plainly.",
+   "tension": "Sharp tongue, quick temper. You argue to win, say cutting things you regret and rush decisions. Impatience with slower minds may alienate people. Channel the intellectual energy into debate or writing, and count to ten before responding in anger.",
+   "fusion": "Thought and action are close. You make up your mind quickly, speak bluntly and enjoy a challenge of wits. Your mind is competitive and restless. Learning to listen fully before replying prevents unnecessary fights."
+  },
+  "Mercury|Jupiter": {
+   "flow": "You see the big picture and explain it generously. Learning, travel and publishing suit you, and optimism helps you teach and persuade. Your ideas are broad and ethical, and people trust your judgment. You also grasp context quickly.",
+   "tension": "Your mind reaches for more than it can finish. You may overlook details, exaggerate, give advice you do not follow or take on too many projects. Fact checking and smaller steps rein in your enthusiasm and make your ideas dependable.",
+   "fusion": "Thought is expansive and philosophical. You love ideas, languages and debate, and speak with confidence. Details can bore you and promises may outrun delivery. Pairing vision with careful verification makes you a respected thinker."
+  },
+  "Mercury|Saturn": {
+   "flow": "Your mind is organised and thorough. You plan carefully, think logically and keep commitments. You do well in research, law, engineering or administration. Speech is measured, and people value your reliability. Learning comes slowly but becomes solid.",
+   "tension": "Self-doubt colours thinking. Worry, pessimism and fear of being judged can block speech or make you over-prepare. Perhaps you were criticised for your learning. Gently challenging negative assumptions and trusting your growing expertise releases the mind.",
+   "fusion": "A serious, disciplined mind. You think slowly, thoroughly and with caution, speak little unless sure, and can be pessimistic. Concentration is a strength. Humour and flexibility are the missing ingredients, so give yourself permission to be tentative or playful."
+  },
+  "Mercury|Uranus": {
+   "flow": "Original ideas appear suddenly, and you think ahead of the crowd. Technology, science, astrology and invention appeal. You learn fast, enjoy unusual viewpoints and express them with energy. Your mind makes connections that others miss.",
+   "tension": "Mental restlessness and nerves. Thoughts race, concentration scatters, and you may say shocking things or reject advice automatically. Conversation can become contrarian. Grounding the ideas in practice and listening before rebutting makes them usable.",
+   "fusion": "A quick, inventive mind with erratic bursts. You are intuitive, impatient with routine and free in speech. Genius and eccentricity can be close. Sleep, regular habits and finishing one idea at a time help your insights come to something."
+  },
+  "Mercury|Neptune": {
+   "flow": "Imagination feeds your thinking. You write, listen and perceive with poetic sensitivity, and you intuit what others leave unsaid. Music, film, fiction and spiritual study draw you. Your communication carries feeling and warmth.",
+   "tension": "Thought clouds easily. Details slip, memory and communication blur, and you may be misled by wishful thinking or half-truths. Written agreements and plain language protect you. Practising precision lets imagination stay creative instead of confusing.",
+   "fusion": "Mind and imagination overlap. You think in images, absorb impressions and may find literal facts dull. Intuition is rich but unreliable on details. Keep notes, verify facts and let your poetic side work through art."
+  },
+  "Mercury|Pluto": {
+   "flow": "You think deeply and investigate thoroughly. Research, psychology and strategy suit you, and your words can persuade without force. You see what lies behind appearances. Changing your mind comes by reasoning, and you hold your counsel well.",
+   "tension": "Obsessive thought, suspicion or the urge to control through argument. You may brood, dig for hidden motives or use words as weapons. Others feel interrogated. Learning to trust, and to let some questions rest, spares you and them.",
+   "fusion": "The mind goes to the root. Intensity, secrecy and persistence mark your thinking and speech, and a forceful opinion once formed is hard to shake. You excel at investigation. Remember curiosity should serve understanding, not domination."
+  },
+  "Mercury|Chiron": {
+   "flow": "Your ideas heal. Having struggled with expression or learning, you explain things with sensitivity and help others find their voice. Writing, teaching and counselling are natural fields. Your insight carries an empathy that makes people feel understood.",
+   "tension": "Voice and intellect feel vulnerable. School may have been painful, or you were told your ideas were wrong. You fear speaking or over-correct. Be patient with yourself, and recognise how much your skill grew from that sensitivity.",
+   "fusion": "Thinking and wounding meet. Early difficulties with speech, learning or being heard shape your mind, often giving you unusual insight into how people learn. Self-criticism is the risk. Using your voice despite fear heals that old place."
+  },
+  "Mercury|North Node": {
+   "flow": "Your thinking helps your growth. Study, conversation, writing and networking lead to the right contacts. Curiosity moves you forward, and learning comes with purpose. People and information reach you at timely moments.",
+   "tension": "Habitual thinking blocks the direction your life needs. You may defend old opinions or talk about change without taking steps. Broadening your point of view and asking questions guide you where fixed ideas will not.",
+   "fusion": "Mind and purpose are linked. Communication, learning and short journeys are themes in your growth, and the people you meet shape your path. Stay curious and share what you know, and the right doors open."
+  },
+  "Mercury|Ascendant": {
+   "flow": "Your manner is articulate and lively. You are easy to talk to, make a good impression through words, and adjust your tone to the company. Others see you as intelligent and sociable, and communication is how you take your place.",
+   "tension": "What you say does not match how you look, or you present a different mind at first meeting than you later reveal. Nerves or fast talk can mask your real thoughts. Partners often become your best sounding boards.",
+   "fusion": "Your mind is on the surface. You are talkative, curious and quick, and people first notice your voice and wit. You think while you speak, so words may run ahead of reflection. Quiet pauses add weight to your presence."
+  },
+  "Mercury|Midheaven": {
+   "flow": "Communication supports your career. Writing, teaching, media, trade and information work come easily, and your reputation rests on clarity and reasoning. Colleagues listen to you, and your career benefits from versatility and networking.",
+   "tension": "Your thoughts and your professional path disagree. You may be pushed into work that does not use your mind, or overtalk in public roles. Career decisions involve a lot of second-guessing. Clarify what you want before others advise.",
+   "fusion": "Your mind is part of your public identity. People know you for what you say, write or know, and career paths often involve communication or several roles. Reputation follows your words, so choose them carefully."
+  },
+  "Venus|Mars": {
+   "flow": "Attraction and action work in tune. You pursue what you love with confidence, flirt with ease and keep passion alive in relationships. Creative energy is high, and your affection is physical and honest. Desire and tenderness support each other.",
+   "tension": "Wanting and loving pull apart. Passion can bring jealousy, quarrels or lovers who excite but unsettle you. You may swing between pursuit and withdrawal. Learning to talk openly about desire, and to give as well as take, steadies relationships.",
+   "fusion": "Desire and affection are fused. You are magnetic, passionate and direct in love, with strong appetites and artistic energy. Romance is intense, and you do not enjoy waiting. Take care that the chase does not outweigh real connection."
+  },
+  "Venus|Jupiter": {
+   "flow": "Warmth, generosity and good luck in love and money. You enjoy life, attract friends and often receive help or gifts. Relationships grow through shared optimism, and artistic or social pursuits bring happiness. Contentment comes without much struggle.",
+   "tension": "Too much of a good thing. You may overspend, overindulge or promise more affection than you can deliver. Expectations of love grow unrealistic. Setting a budget, and being specific about what you value, keeps pleasure healthy.",
+   "fusion": "A generous, affectionate and pleasure-loving nature. You attract good fortune socially and enjoy beauty, food and travel. Others find you kind. Moderation is the lesson, since indulgence can become a habit that dulls your real appetites."
+  },
+  "Venus|Saturn": {
+   "flow": "Your loyalty is dependable. You love steadily, value commitment and let relationships deepen with time. Your taste is classic and your finances sensible. Partners trust you, and you often find greater happiness in love as you mature.",
+   "tension": "Love feels like duty or something you must earn. Fear of rejection, coldness, age-gap relationships or delay in finding partnership are common. You may undervalue yourself. Allowing warmth and treating yourself with kindness slowly eases it.",
+   "fusion": "Affection is restrained and serious. You choose carefully, hold back at first and may feel unlovable despite deep loyalty. Money and love are handled cautiously. Enduring bonds come with age, so be patient and allow vulnerability."
+  },
+  "Venus|Uranus": {
+   "flow": "You attract unusual, stimulating relationships and enjoy friendship in love. Your style is original and you tolerate others' independence. Sudden attractions can turn out well. Freedom and affection co-exist more easily for you than for most.",
+   "tension": "Excitement and stability clash. You may crave freedom while wanting intimacy, or fall suddenly in love and out again. Partners can feel unsettled. Honest agreements about space, and patience with slow-building affection, keep the thrill from derailing lasting bonds.",
+   "fusion": "Love and freedom are tied. You are drawn to the unconventional, bore easily and need room in relationships. Attractions strike suddenly, and your taste is avant-garde. Stability is built by choosing partners who value independence."
+  },
+  "Venus|Neptune": {
+   "flow": "Your love is romantic, compassionate and artistic. You see the best in people and respond to music, poetry and spiritual beauty. Creative gifts flourish, and you give selflessly. Relationships feel almost magical when well chosen.",
+   "tension": "Idealisation then disillusion. You may love someone's potential rather than the person, rescue people, or be deceived. Money and affection can dissolve into confusion. Clear boundaries and seeing partners as they are protect your tender heart.",
+   "fusion": "Romance and fantasy mix. You are sensitive, devoted and artistic, often longing for an ideal. Sacrifice for love comes naturally and so does self-deception. Let creative work hold your dreams while you meet real people honestly."
+  },
+  "Venus|Pluto": {
+   "flow": "You love deeply and transform through relationships. Magnetism, loyalty and emotional honesty draw lasting bonds. You are not afraid of intensity, and can heal old patterns through intimacy. Finance and creative work benefit from your depth.",
+   "tension": "Jealousy, possessiveness and power struggles in love. You may be obsessed with someone or controlled by them, and betrayals cut deep. Relationships force you to face hidden fears. Trust and honest self-examination free affection from domination.",
+   "fusion": "Passion verges on obsession. You love totally, want deep merging and feel desire's pull strongly. Relationships transform you, sometimes through loss. Magnetism is high. Learn to let go gracefully, because holding too tightly destroys what you value."
+  },
+  "Venus|Chiron": {
+   "flow": "Your own heartache has made you a gentle, understanding lover and friend. You see what hurts in others and respond kindly. Art and relationships can be healing for you. Self-acceptance grows through being loved without having to earn it.",
+   "tension": "Worthiness of love is the sore spot. You may attract people who confirm your doubts, avoid closeness, or fear you are not attractive. Compare less and offer yourself tenderness first, then relationships feel less like tests.",
+   "fusion": "Love and old pain are linked. Early rejection or feeling unlovable may shape how you form attachments, giving you both vulnerability and compassion. Over time you teach others how to value themselves. Self-love is the work."
+  },
+  "Venus|North Node": {
+   "flow": "Love, beauty and harmony support your path. Relationships, artistic work and social grace open doors, and you grow by valuing what truly matters to you. Partners and friends often appear when you need them. Cooperation helps you advance.",
+   "tension": "Pleasure and comfort can distract you from your direction, or you may stay in relationships that feel nice but stop your growth. Standards must be updated. Choose what nourishes your purpose over what just feels good now.",
+   "fusion": "Values, relationships and aesthetics form part of your life lesson. Learning to love, cooperate and honour what you find beautiful moves you forward. Relationships may feel fated. Remember that harmony includes honest disagreement."
+  },
+  "Venus|Ascendant": {
+   "flow": "Charm shows right away. People find you warm, attractive and easy to like, and you present yourself with taste. You make friends and gain cooperation without effort. Your personal style fits you, and others feel welcome around you.",
+   "tension": "You may be nicer outwardly than you feel, avoid conflict, or attract people through appearance that doesn't match your depth. Partners mirror your hidden wishes. Authentic presentation matters more than pleasing everyone.",
+   "fusion": "Grace is part of your personality. You look pleasant, move with ease, and value harmony and appearance. People like you quickly. Take care not to rely on charm alone, and show your serious side when it matters."
+  },
+  "Venus|Midheaven": {
+   "flow": "Your career benefits from charm, taste and cooperation. Art, design, fashion, diplomacy, finance and public relations fit you, and others like to work with you. Reputation is positive, and you may receive favours from people in authority.",
+   "tension": "You may pursue a career for approval or comfort, or mix love and professional life awkwardly. Money from work might not match your values. Decide what you actually enjoy and keep relationships and ambitions in clear separate roles.",
+   "fusion": "Your public image is attractive and gracious. You are associated with beauty, pleasure, relationships or money, and a career in these fields suits you. Reputation depends on likeability, so keep integrity alongside popularity."
+  },
+  "Mars|Jupiter": {
+   "flow": "Courage meets confidence. You take bold, well-timed risks, finish what you start and inspire others to act. Sports, entrepreneurship, law and campaigning suit you. Your energy has a sense of purpose, and good luck often accompanies decisive moves.",
+   "tension": "Overreach and crusading. You may start more than you can finish, push your beliefs too hard or act rashly because you feel certain. Anger can wear a righteous face. Check the facts and your stamina before committing.",
+   "fusion": "Energy is expanded and enthusiastic. You act on big ideas, enjoy physical challenge and fight for causes you believe in. Boundless drive is useful, but you can burn through resources or push too far. Pace yourself and plan."
+  },
+  "Mars|Saturn": {
+   "flow": "Drive and discipline work together. You pace your effort, endure setbacks and finish difficult projects. Craft, engineering, athletics and management come naturally. Your anger is controlled and your ambition methodical, which makes you formidable over the long term.",
+   "tension": "Frustration is the keynote: you push and meet obstacles, or hold anger in until it hardens. Starting is hard, stopping harder. Authority figures may block you. Patience, regular exercise and clear priorities turn restraint into stamina instead of resentment.",
+   "fusion": "Accelerator and brake pressed together. You are hard-working and enduring but often tense, and anger is suppressed or cold. You achieve through persistence. Release the pressure physically, and let yourself act without waiting for perfection."
+  },
+  "Mars|Uranus": {
+   "flow": "Energy is original and ready. You act quickly on new ideas, adapt well in emergencies and enjoy technology or adventure. Independent action is easy, and you inspire others to try something different. Reflexes are quick.",
+   "tension": "Impulsive, accident-prone and rebellious. You act before thinking, break rules for the thrill or lash out suddenly. Tension runs high. Burning energy through sport and thinking through risks prevent injuries and quarrels.",
+   "fusion": "Explosive energy that resists control. You are daring and fast and detest being told what to do. Sudden anger and accidents are possible, though so are brilliant breakthroughs. Build safe outlets such as intense exercise."
+  },
+  "Mars|Neptune": {
+   "flow": "Your drive is guided by inspiration. You act for ideals, with compassion, and can sense the right time for action. Dance, swimming, healing and creative work use this well. Quiet persistence flows without much struggle.",
+   "tension": "Willpower leaks away. You may lack direction, avoid conflict, be passive-aggressive or be manipulated. Energy fluctuates and sensitivity to drugs and alcohol is high. Clear goals, regular routines and direct speech restore your force.",
+   "fusion": "Action and dream merge. You work for ideals and can be oddly tireless, or drained. Anger goes underground. Spiritual or artistic expression channels energy well. Make plans concrete and say no when you mean it."
+  },
+  "Mars|Pluto": {
+   "flow": "Immense endurance and focus. You can persist through crises, handle pressure calmly and transform situations through steady force. Surgery, investigation, sport and strategy suit you. Power is used with purpose.",
+   "tension": "Battles for control. Rage, grudges and ruthless competitiveness appear, or you attract coercive people. Suppressed anger can erupt. Confronting the roots of your fury, and fighting only worthwhile fights, converts violence into resolve.",
+   "fusion": "Raw, concentrated power. Your will is formidable, your anger deep, your stamina remarkable. You cannot do things halfway. This can build great things or destroy relationships. Choose carefully where to aim and let go of vendettas."
+  },
+  "Mars|Chiron": {
+   "flow": "Hurt becomes motivation. You act to protect the vulnerable, teach self-defence or heal through physical work. Your courage comes from having faced injury or powerlessness. You know when to step in and when to step back.",
+   "tension": "Asserting yourself touches an old wound: being bullied, ignored or punished for anger. You may either avoid conflict or fight too hard. Healing comes from standing up for yourself calmly and trusting your strength.",
+   "fusion": "Action and wounding meet. Anger, physical injury or aggression may have marked your early years, and you struggle with confidence in asserting yourself. The same history makes you a brave healer. Learn to use your force gently."
+  },
+  "Mars|North Node": {
+   "flow": "Initiative moves you forward. Acting decisively, taking risks and standing up for yourself help your growth, and opportunities respond to energy. Courage clears the way. Competitive or physically active roles feel meaningful.",
+   "tension": "Your habitual combativeness or impatience obstructs the path. You may fight needless fights, or hold back when action is needed. Learn when to push and when to cooperate, because force misapplied delays your direction.",
+   "fusion": "Drive and destiny are tied. Learning to act, assert and finish things is part of your development. You meet people who challenge or energise you. Keep your courage aligned with meaning, not just conflict."
+  },
+  "Mars|Ascendant": {
+   "flow": "You come across as energetic and capable. People sense your confidence and willingness to act, and you take the lead without friction. Physical presence is strong and you handle challenges with poise.",
+   "tension": "Your assertiveness can seem like aggression, and conflict seems to find you. Others may react defensively. Relationships challenge you to balance self-assertion with consideration. Opposition to the Ascendant suggests meeting competition through partners.",
+   "fusion": "A direct, forceful first impression. You are quick, physically energetic and sometimes abrupt. People either respect or resist you. Softening your tone costs you nothing and greatly increases your effectiveness with others."
+  },
+  "Mars|Midheaven": {
+   "flow": "Energy supports ambition. You work hard, pursue goals directly and are rewarded for initiative. Leadership, competition, engineering, sport or the military suit you. Superiors notice your drive and you handle responsibility well.",
+   "tension": "Conflicts with authority, impatience with career progress or a workplace full of friction. You may push too hard, fight bosses or burn out. Channelling ambition into steady achievement and cooperation brings recognition without needless battles.",
+   "fusion": "Ambition is aggressive and visible. You are known for drive, initiative and perhaps combativeness. Careers in action, competition or building suit you. Take care that speed and force do not damage your reputation."
+  },
+  "Jupiter|Saturn": {
+   "flow": "Vision and realism cooperate. You can plan big and build steadily, balancing risk with caution. Growth is sustainable, and mentors or institutions help you. Business, education and law benefit from your blend of faith and prudence.",
+   "tension": "Expansion and restriction alternate: optimism collides with fear, or generosity with thrift. You may swing between overreach and withdrawal. Progress comes in cycles. Learning to take calculated risks, and to trust in time, stabilises ambition.",
+   "fusion": "Faith and caution are joined. Progress is measured and tied to social cycles, as the pair meets about every twenty years. You build slowly but durably. Ideal and practical must be reconciled; trust that structure can serve growth."
+  },
+  "Jupiter|Uranus": {
+   "flow": "Luck favours your boldness. New ideas, technology and travel open sudden opportunities, and you value freedom within a community. You inspire reform with optimism. Timely breaks arrive when you are open to change.",
+   "tension": "Restless overexpansion. You may chase every novelty, reject commitments or gamble on risky schemes. Beliefs shift suddenly. Anchoring your vision in a few real projects turns inspiration into progress rather than chaos.",
+   "fusion": "Hope and change are one. You are an optimist about reform and enjoy radical ideas, and fortune tends to arrive suddenly. Take care with overconfidence, sudden gambles and impulsive big decisions that you later regret."
+  },
+  "Jupiter|Neptune": {
+   "flow": "Faith and imagination support each other. You are idealistic, compassionate and drawn to spiritual or artistic meaning. Charity and creative vision come naturally, and you trust life's flow. Inspiration is plentiful.",
+   "tension": "Ideals outrun reality. You may be naive, overgenerous, deceived by gurus or caught in wishful thinking. Boundaries on money and trust are needed. Test inspiring ideas against facts so faith strengthens rather than misleads you.",
+   "fusion": "Beliefs are dreamy and boundless. You feel connected to something greater, with great compassion and a habit of seeing only the best. Spiritual and artistic gifts are real, but check finances and promises."
+  },
+  "Jupiter|Pluto": {
+   "flow": "You handle power and wealth with strategic confidence. Big transformations in business, education or belief are possible, and you recover from crises with greater resources. Influence grows. Mentors, research and healing support success.",
+   "tension": "Power and belief collide. You may force opinions, overreach for control or meet fanatics. Crises of faith transform your worldview. Humility and ethical aims turn ambition into positive influence rather than a fight over who is right.",
+   "fusion": "Great ambition and conviction. You aim for large-scale impact and are drawn to wealth, truth and transformation. Dogmatism and the pursuit of power are risks. Use your influence for the good of others."
+  },
+  "Jupiter|Chiron": {
+   "flow": "Your wisdom is born of experience. You teach, guide and encourage others from your own journey, and have an easy way with spiritual or healing work. Hope returns reliably after loss, and your faith has depth.",
+   "tension": "Optimism and pain clash. Faith may have been shaken, or you may hand out help as a way to avoid your own wounds. Teaching what you haven't healed brings frustration. Honest self-care supports your generosity.",
+   "fusion": "Growth and wound combine. Your beliefs have been tested, and you seek meaning in suffering. This gives teaching and healing talent. Avoid preaching, and stay a learner with an open heart."
+  },
+  "Jupiter|North Node": {
+   "flow": "Opportunity follows your path. Teachers, travel and learning help you grow, and generosity and optimism attract the right people. Following your beliefs leads to progress. Fortune often supports your life direction.",
+   "tension": "Overconfidence or complacency keeps you from your direction. You may rely on old luck, or preach without acting. Expansion for its own sake is a distraction. Choose growth that calls for new learning.",
+   "fusion": "Faith and purpose are linked. Learning, teaching, travel and philosophy are strong themes in your development. You grow by sharing wisdom. Keep humble, and let your trust in life take you into unfamiliar places."
+  },
+  "Jupiter|Ascendant": {
+   "flow": "You come across as warm, optimistic and generous. People trust you, and doors open for you socially. You look lucky and often are, partly because your cheer is contagious. Travel and learning suit you.",
+   "tension": "Your outward manner can overpromise, or you may appear overconfident, indulgent or preachy. Partners may mirror your excess. Humility, punctuality and attention to detail keep your friendly image believable to sceptical people.",
+   "fusion": "A big, benevolent presence. You are expansive in gesture, humour and appetite, and others find you encouraging. Weight or excess can show physically. Moderation makes your natural optimism more convincing."
+  },
+  "Jupiter|Midheaven": {
+   "flow": "Career grows naturally. Teaching, law, publishing, travel, religion and business with ethical roots suit you, and mentors and good fortune help. Reputation for integrity and vision builds steadily. Promotions come as you apply knowledge.",
+   "tension": "Ambition outpaces reality, or beliefs conflict with career demands. You may take on too much, promise grand outcomes or tire of routine. Define a clear field and meet obligations before expanding.",
+   "fusion": "Success and growth are public themes. You may become known as a teacher, advisor or leader with a wide view, and honours often come. Hubris and overextension are the risks, so stay principled."
+  },
+  "Saturn|Uranus": {
+   "flow": "Tradition and innovation cooperate. You can reform systems from within, introduce new methods carefully and make original ideas practical. Engineering, administration and science suit you. Stability and change balance well in your life.",
+   "tension": "Order against revolution. The need for security conflicts with the urge for freedom, and you may feel stuck then suddenly break out. This pairing marks generational tension, and for you it appears as indecision or abrupt reversals in structure.",
+   "fusion": "Structure and rebellion are bound together. You may be both conservative and radical, building something new through discipline. Inner tension is high. Learn to change gradually, and to hold form while allowing innovation."
+  },
+  "Saturn|Neptune": {
+   "flow": "Practical idealism. You can give dreams a workable shape, through disciplined art, spiritual practice or caring institutions. Imagination is anchored, and compassion meets responsibility. This is a slow but fruitful blend.",
+   "tension": "Doubt and disillusion. Reality seems to crush ideals, or fears feed on vague anxieties. You may feel your dreams are unrealistic or live with confusion about duty. Small, consistent steps toward a vision restore hope.",
+   "fusion": "Dreams and limits fuse. Faith may be tested, and responsibilities may feel like sacrifice. Generational themes of disillusion mark this contact. Build tangible structures for your imagination, and keep faith through disappointment."
+  },
+  "Saturn|Pluto": {
+   "flow": "Great endurance. You face difficulty steadily and without panic, rebuild after collapse and handle power responsibly. Restructuring, investigation and crisis management suit you. Willpower combined with patience can achieve lasting transformation.",
+   "tension": "Heavy pressure and fear of loss. Control, harsh authority or survival struggles appear, and you may feel crushed or become rigid. Letting old structures end, instead of gripping them, allows new forms to emerge.",
+   "fusion": "Control and transformation are tied. Life asks you to survive hard conditions and gain strength from them. Grim moods and distrust are risks. Your tenacity is exceptional, so use it to rebuild rather than to defend."
+  },
+  "Saturn|Chiron": {
+   "flow": "Patient healing. You build structured support for others, such as clinics, training or reliable routines, drawn from lived experience. Maturity helps you accept limits without bitterness. Time turns pain into wisdom.",
+   "tension": "Old wounds meet heavy responsibility. Feelings of inadequacy, harsh self-judgment or early burdens may weigh on you. Perfectionism blocks healing. Treating yourself with the patience you would offer a student helps.",
+   "fusion": "Limits and wounds meet. You may have grown up quickly or felt unprotected, and you equate worth with achievement. This yields perseverance and credibility in healing work. Self-forgiveness is a necessary practice."
+  },
+  "Saturn|North Node": {
+   "flow": "Discipline helps your growth in a very practical way. Hard work, boundaries and commitment pay off, and mentors or elders guide your direction. You mature steadily. Structure feels supportive, and responsibility becomes meaningful.",
+   "tension": "Fear and caution hold you back. You may rely on rigid habits or on the comfort of duty, avoiding risks that growth needs. Letting go of self-imposed limits is part of your task. Do not mistake caution for purpose.",
+   "fusion": "Responsibility is central to your path. Maturity, structure and delayed rewards shape your life direction. You learn through hardship and commitment. Accept the long view; the rewards arrive late but last."
+  },
+  "Saturn|Ascendant": {
+   "flow": "You appear dependable and composed. People take you seriously, trust your judgement and rely on you. You age well. Discipline in presentation earns respect, and you conduct yourself responsibly in new situations.",
+   "tension": "You may seem cold, defensive or older than you are, and feel shy or judged. Others find it hard to approach you. Opposition to the Ascendant shows tests through partners and authority. Smiling more is a real strategy.",
+   "fusion": "A serious, reserved first impression. You are cautious, formal and watchful, perhaps awkward when young. Self-consciousness gradually changes into quiet authority. Allow some warmth to show, since you are warmer than you look."
+  },
+  "Saturn|Midheaven": {
+   "flow": "Steady career progress. You build expertise, earn authority and handle responsibility well, with success consolidating over time. Management, engineering, law and government suit you. Your reputation is based on reliability.",
+   "tension": "The career path is hard: heavy demands, strict bosses, delays or fear of failure. Ambition may push you to sacrifice home life, or you may doubt yourself. Persistence and boundaries bring recognition eventually.",
+   "fusion": "Ambition and duty are blended. You work hard for status and fear mistakes in public. Success usually arrives after thirty, in a field requiring patience. Remember to enjoy the climb and take breaks."
+  },
+  "Uranus|Neptune": {
+   "flow": "A generational blend of innovation and vision. You are open to spiritual and technological ideas, and you sense social currents early. Personally, intuition and originality work together in creative or reform-minded pursuits.",
+   "tension": "Ideals and change unsettle each other. Intuition may seem erratic, and sudden insights blur into confusion. Because this is a generational aspect, personal effects depend on which houses it touches; stay grounded when inspiration is intense.",
+   "fusion": "The pair meets about every 170 years, bringing a generation fascinated by new forms of consciousness. You may feel drawn to the experimental and mystical. Anchoring these impulses in daily life keeps them from becoming escapist."
+  },
+  "Uranus|Pluto": {
+   "flow": "Reform and regeneration together. You support radical change at deep levels, handle upheaval calmly and can inspire group renewal. Your generation breaks old structures, and personally you may transform quickly when needed.",
+   "tension": "Upheaval and power struggles. Sudden crises force change, and you may sense social pressure to rebel. Because this is a slow, generational pairing, its effect is personal only through the houses and planets it touches.",
+   "fusion": "A generational signature of revolution. Rapid, radical change marks your era, and you may feel part of social upheaval. Personally, watch for forceful, disruptive reactions, and apply the energy to constructive reform."
+  },
+  "Uranus|Chiron": {
+   "flow": "Your original insights heal. Alternative therapies, innovative teaching and unusual approaches to old problems come easily. You free others from limiting patterns and your unconventional wisdom is welcomed by people who feel stuck in standard treatments or ideas.",
+   "tension": "Sudden exposure of wounds. Feeling like an outsider, or being shocked by betrayal, can trigger awakening and distress. Healing involves accepting your difference. Allow change to happen gradually instead of cutting off pain.",
+   "fusion": "Awakening and wound meet. You may have felt different or alienated, and that shaped you into an innovator of healing. Freedom and vulnerability go together for you. Welcome your uniqueness as a gift."
+  },
+  "Uranus|North Node": {
+   "flow": "Change helps your path. Innovation, networking and willingness to break habits lead you to the right people. Sudden opportunities appear and your uniqueness is an asset. You follow your own timetable, and it works out better than anyone predicted.",
+   "tension": "Rebellion for its own sake distracts you. You may flee commitment, resist guidance or swing between extremes. Uranus can disrupt your direction as well as launch it. Choose freedom with purpose.",
+   "fusion": "Individuality is linked to destiny. Groups, ideas and unusual people help define your direction. You may feel your life is unconventional. Remember to build as well as break away, and commit long enough to see what grows."
+  },
+  "Uranus|Ascendant": {
+   "flow": "You appear fresh, original and independent. People find you interesting and ahead of the times, and you adapt quickly. Your image can change smoothly, and you make friends from many backgrounds.",
+   "tension": "Your manner is unpredictable or contrary. You may rebel against first impressions, appear cold or restless, or draw sudden relationship changes. Partners reflect your need for freedom. Consistency in small things makes you easier to know.",
+   "fusion": "A distinctive, electric presence. You may dress or behave unusually, move quickly, and surprise people. Stability is not your first impression. Be mindful of nerves and tell people what you need."
+  },
+  "Uranus|Midheaven": {
+   "flow": "Career favours originality. Technology, science, media, reform and independent work suit you, and sudden promotions or changes of field often turn out well. Authorities tolerate your unconventional ways because your results speak, and clients value fresh approaches.",
+   "tension": "Career instability. You resist authority, change paths abruptly, or are disrupted by outside events. Rebellion can damage reputation. Choose flexible work with real freedom, and cultivate some reliability so that people can depend on you.",
+   "fusion": "Your career path is unconventional. You may work as an innovator, freelancer or reformer, with sudden shifts of direction. Public reputation includes being different. Freedom matters more than status for you."
+  },
+  "Neptune|Pluto": {
+   "flow": "A long, slow generational harmony. You sense collective currents of idealism and transformation, and may be drawn to spiritual or psychological depth. Personally, insight into the unconscious comes more easily.",
+   "tension": "Collective undercurrents are unsettling: confusion mixed with fear or pressure. This 500-year cycle affects you personally only through houses and planets it touches. Keep reality checks in place, avoid extremes and stay connected to practical, everyday life.",
+   "fusion": "A rare, generational merging of dissolution and transformation, last seen in the 1890s. You may feel unusually sensitive to collective shifts and mystery. Anchor yourself with practical routines, since the themes are large."
+  },
+  "Neptune|Chiron": {
+   "flow": "Compassion and healing flow together. You are intuitive about suffering and bring spiritual or artistic means to healing work. Empathy is deep, and you can help others without losing yourself.",
+   "tension": "Boundaries are weak. You may absorb others' pain, rescue endlessly or lose yourself in sacrifice. Distinguishing your pain from theirs matters. Creative work, quiet time and a trusted listener help transform unresolved hurt into something useful.",
+   "fusion": "Sensitivity and wounding combine. You feel suffering deeply, often in the collective, and may be a natural healer or artist. Avoid martyrdom and escape. Spiritual practice gives your empathy shape."
+  },
+  "Neptune|North Node": {
+   "flow": "Intuition and faith guide your path. Spiritual interests, creative work and compassion open the right doors. You follow inner signals that prove correct. Surrender helps you grow, and trusting what you sense often saves time and effort.",
+   "tension": "Fog and avoidance disrupt direction. You may drift, idealise a path or escape from tasks that need effort. Dreams must be turned into steps. Discernment, rather than wishing, steers your growth.",
+   "fusion": "Imagination and destiny are woven. Spiritual, artistic or service themes are part of your life lesson. You may feel a sense of calling. Ground the vision to avoid being swept away."
+  },
+  "Neptune|Ascendant": {
+   "flow": "An alluring, gentle presence. People sense your sensitivity and imagination, and you adapt to those around you. You may attract artistic or spiritual circles, and make a soft, memorable first impression.",
+   "tension": "You can seem elusive or indefinite, and people misread you or project onto you. Boundaries are loose, and partners may idealise or deceive. Being clear about your needs and choices helps others see you.",
+   "fusion": "A dreamy, shifting personality. You are impressionable and intuitive, perhaps hard to pin down. You pick up the mood of rooms. Look after your health and avoid losing yourself in others' expectations."
+  },
+  "Neptune|Midheaven": {
+   "flow": "Creative, caring or spiritual careers suit you. Music, film, healing, charity and imaginative fields use your gifts, and you inspire the public. Your reputation holds a certain glamour, and vision guides your path.",
+   "tension": "Career direction is unclear. You may chase an ideal job, be misled, or face scandal or confusion in public life. Define concrete goals and watch for deception. Work with clear contracts.",
+   "fusion": "Public image is mystical or elusive. You may be associated with art, spirituality or illusion, and your vocation feels like a calling. Others see what they want in you. Protect your reputation with transparency."
+  },
+  "Pluto|Chiron": {
+   "flow": "Deep healing. You can face your darkest wounds and transform them into strength, with potent ability in psychology, crisis work or recovery. Others trust you with their hardest truths. Your resilience is exceptional.",
+   "tension": "Confronting pain is intense. Buried trauma may surface through power struggles or loss, and you may feel overwhelmed or fixated. Support and patience make the process safe. The goal is liberation, not punishment.",
+   "fusion": "Transformation and wound merge. Life may involve profound loss or survival and give you the capacity to guide others through crisis. Healing is a long, rebuilding task. Seek skilled support and honour the pace."
+  },
+  "Pluto|North Node": {
+   "flow": "Transformation supports your destiny. Releasing the past and embracing power ethically lead to growth, and crises open new doors. You work effectively with depth, research and renewal, and others sense that you can be trusted with difficult changes.",
+   "tension": "Control and fear of change obstruct your path. You may cling to power, secrets or old patterns. Letting go is the task, and recurring struggles show where you resist. Surrender the need to control outcomes, and trust that endings clear space for what you actually came here to do.",
+   "fusion": "Power and purpose are connected. Your life direction includes regeneration, intensity and deep encounters, and you may meet transformative people. Use your influence responsibly, welcome endings as openings, and accept that real change is rarely comfortable or quick."
+  },
+  "Pluto|Ascendant": {
+   "flow": "A magnetic, composed presence. People sense your depth and strength, and you handle crises with calm. You can reinvent yourself. Others trust or fear your insight, and you carry quiet authority.",
+   "tension": "Intensity creates power struggles. You may seem intimidating or secretive, and partners provoke control issues. Opposition to the Ascendant brings transformative relationships. Softening your gaze and sharing vulnerability earns trust.",
+   "fusion": "A strong, penetrating presence. You are private yet unforgettable, and your appearance may change dramatically through life. People react strongly to you. Let your warmth show, because depth need not be threatening."
+  },
+  "Pluto|Midheaven": {
+   "flow": "Career gives you influence. Research, finance, psychology, politics or crisis leadership suit you, and you rise through resilience. You can rebuild a career after setbacks, and your authority is respected.",
+   "tension": "Power struggles at work. You may face domineering authorities, public fall and rebuilding, or an obsessive drive for status. Ethics matter. Work with integrity, and know when to release a role.",
+   "fusion": "You are meant for intense, transformative public roles. Your reputation involves power, secrets or reinvention, and career changes can be dramatic. Use your authority to empower others, or ambition becomes consuming."
+  },
+  "Chiron|North Node": {
+   "flow": "Your healing supports your purpose. Turning wounds into service brings you into line with your path, and you meet people who need what you learned. Teaching and guiding come naturally.",
+   "tension": "Avoiding old wounds stalls your growth. You may hide in comfortable roles to avoid vulnerability. Facing the pain, with support, is the doorway. Your purpose asks for courage rather than perfection.",
+   "fusion": "Healing and destiny are joined. Your life path includes helping others through your own wounds, and you may meet teachers or clients who reflect them. Embrace imperfection, because it is part of your gift."
+  },
+  "Chiron|Ascendant": {
+   "flow": "Your vulnerability makes you approachable. People sense that you understand pain, and you put them at ease. Your openness about imperfection builds trust, and others open up around you about things they rarely share elsewhere.",
+   "tension": "You may feel flawed, self-conscious or misunderstood, and show a guarded face. Others may sense the wound and prod it. In relationships you meet the hurt in partners. Self-acceptance changes how others respond, and the guarded face softens as you stop apologising for being sensitive.",
+   "fusion": "A sensitive, wounded-healer presence. You carry visible vulnerability or a past that shaped your appearance and bearing. People may confide in you. Develop self-compassion, and do not let the old story define your self-image."
+  },
+  "Chiron|Midheaven": {
+   "flow": "Your career draws on healing. Counselling, teaching, medicine, coaching and mentoring suit you, and your reputation grows from helping others. Experience of difficulty makes you credible and inspiring to clients and colleagues who are struggling themselves.",
+   "tension": "Public life exposes your sore spots. You may fear failure, feel unrecognised or hide behind work. Careers can involve repeated wounds. Take support, and let your imperfect journey be part of your authority.",
+   "fusion": "Your vocation is tied to your wound. You may be known as a healer or a person who overcame hardship. Public role can be demanding emotionally. Set clear boundaries, rest often, and remember that you cannot heal everyone who comes to you."
+  },
+  "North Node|Ascendant": {
+   "flow": "Your personality moves you toward your purpose. Being yourself, and presenting authentically, attracts the right opportunities and people. First impressions suit your direction, and you feel at home in your growth.",
+   "tension": "Personal habits and your path disagree. Your usual self-presentation is comfortable but may not fit your direction, and encounters push you to change. Others mirror what you need to learn. Be willing to show a new side.",
+   "fusion": "Your sense of self and purpose are fused. Life direction shows in who you are, how you look and how you engage. You meet important people early. Stay open to growth and avoid leaning on habits."
+  },
+  "North Node|Midheaven": {
+   "flow": "Career supports purpose. Your public role and life path point the same way, and you meet helpful contacts in work. Recognition arrives as you follow your calling, and success feels meaningful.",
+   "tension": "Your career and calling differ. You may be successful in an old role that does not fit your purpose, or pursue status over meaning. Reorienting work toward what matters is the challenge.",
+   "fusion": "Vocation and destiny meet. Your life purpose is expressed publicly, and career choices carry unusual weight. You may be drawn to leadership or visibility. Stay faithful to purpose rather than prestige."
+  },
+  "Ascendant|Midheaven": {
+   "flow": "Your personality and your public role fit together. You present yourself in ways that support your career, and colleagues perceive you as consistent. Reputation and character match, so success feels natural.",
+   "tension": "The way you present yourself differs from the role you pursue. You may feel you have to play a part at work or feel unseen in your career. Reconciling self and ambition takes honest adjustment of image or path.",
+   "fusion": "Self and career are closely aligned. Who you are shapes your profession, and your profession shapes your identity. Visibility is likely. Be sure your private life has room to be different."
+  }
+ },
+ "aspect_types": {
+  "Conjunction": "Two planets sit within a few degrees and act as one blended force. The effect is concentrated and often intense, because neither energy is easy to separate from the other. It becomes a major strength or a blind spot depending on whether the two planets cooperate by nature.",
+  "Opposition": "Two planets face each other across the chart, creating a seesaw of polarity. Each side is easily projected onto other people, so relationships often mirror the inner conflict. The task is balance and awareness of both poles, which brings fairness, insight and a wider perspective.",
+  "Trine": "A harmonious link of about 120 degrees between planets in the same element. Energy flows freely, talents come naturally, and life tends to offer support in this area. Because little effort is demanded, the gift can stay unused unless motivation comes from elsewhere in the chart.",
+  "Square": "A tense link of about 90 degrees that pits two planets against each other. It creates frustration, pressure and a repeated need to act. Squares are often the engine of achievement, since the discomfort pushes you to build skills and make decisions you might otherwise postpone.",
+  "Sextile": "A supportive link of about 60 degrees between compatible elements. It offers opportunities rather than guarantees, usually needing some initiative to activate. Sextiles favour practical cooperation, learning and conversation, and they reward effort with steady, realistic progress instead of dramatic results.",
+  "Quincunx": "A 150-degree link between signs that share neither element nor modality, so the two planets struggle to understand each other. It asks for repeated adjustment, patience and small compromises. Strain often shows in routines, health or work until a workable arrangement is found.",
+  "Semi-sextile": "A minor 30-degree link between adjacent signs that have little in common. The two energies are neighbours who rarely understand one another, producing a subtle awkwardness rather than open conflict. Its influence is mild, though it can add nuance when it involves personal planets.",
+  "Semi-square": "A minor 45-degree aspect that acts like a small, persistent irritant. Friction builds slowly, often showing as restlessness or a feeling that something needs fixing. It rarely dominates a chart, yet it can prompt useful action when other tensions are already present.",
+  "Sesquiquadrate": "A minor 135-degree aspect related to the square. It brings agitation, a sense of pressure building toward a release, and sometimes sudden outbursts or abrupt decisions. Treat it as a secondary stress point that shows where tension may need a deliberate outlet.",
+  "Quintile": "A minor 72-degree aspect linked to creativity, style and specialised talent. It suggests ingenuity and the knack of doing something in a distinctive way. It needs practice to mature, and is most noticeable when it involves personal planets or the angles.",
+  "Biquintile": "A minor 144-degree aspect, a close relative of the quintile. It points to creative flair and the ability to turn ideas into practical, skilled expression. The talent tends to be applied rather than purely inspirational, and it grows stronger with training and experimentation."
+ },
+ "patterns": {
+  "Grand Trine": "Three planets form a triangle of trines within one element, creating a closed circuit of easy energy. It brings natural talent, comfort and resilience in that element's area of life. The risk is complacency and self-containment, so the pattern works best when deliberately directed toward a goal or shared with others.",
+  "T-Square": "Two planets in opposition are both squared by a third, the focal or apex planet. The pattern generates sustained pressure and a powerful drive to resolve it. Action usually concentrates through the apex planet, and the empty point opposite it often shows what you need to cultivate. It rewards disciplined effort.",
+  "Grand Cross": "Four planets form two oppositions linked by four squares, usually across one modality. The result is constant tension from several directions, often producing a feeling of being stretched. It demands strength, flexibility and compromise, and those who master it gain remarkable stamina and the ability to hold many demands at once.",
+  "Yod": "Two planets in sextile both form a quincunx to a third, the apex. Sometimes called the finger of fate, it creates a feeling of being called toward a specific task or adjustment. Progress comes by repeated fine tuning rather than force, and the apex planet often shows where a sense of mission develops.",
+  "Kite": "A grand trine with a fourth planet opposing one of its points and sextiling the other two. The opposition gives the easy trine a focus and a direction, turning raw talent into productive effort. It is among the most favourable patterns, offering ability together with the drive to apply it.",
+  "Stellium": "Three or more planets cluster in one sign or house, concentrating attention on that area of life. It produces depth, expertise and strong focus, but can also create tunnel vision and imbalance. The sign, house and the planets involved show what you specialise in, and also what may be neglected in daily life.",
+  "Mystic Rectangle": "Two oppositions linked by two trines and two sextiles form a rectangle. It combines the ease of harmonious aspects with the tension of oppositions, giving a practical blend of talent and drive. Opportunities are plentiful, and the oppositions encourage active effort, so the pattern tends to reward steady, balanced application."
+ },
+ "elements": {
+  "Fire": {
+   "strong": "A strong Fire emphasis brings enthusiasm, courage and a need to act and inspire. You lead by energy and vision, and recover quickly from setbacks. The shadow is impatience, bluntness and burnout when excitement fades, so pacing and listening are the lessons.",
+   "weak": "Little Fire can make it harder to start, assert yourself or trust your own enthusiasm. You may wait for permission or hold back from risk. Consciously building confidence, taking small bold steps and finding activities that energise you helps supply what the chart lacks."
+  },
+  "Earth": {
+   "strong": "A strong Earth emphasis gives practicality, reliability and a talent for building tangible results. You trust what can be seen, measured and tested. The shadow is stubbornness, materialism and resistance to change, so flexibility and imagination need deliberate cultivation.",
+   "weak": "Little Earth can make routines, money and physical self-care harder to manage, with a tendency to drift or overlook practical details. Developing habits, budgeting and grounding practices such as exercise or time in nature helps turn ideas into stable results."
+  },
+  "Air": {
+   "strong": "A strong Air emphasis brings curiosity, sociability and a talent for ideas, communication and seeing patterns. You process life through thought and conversation. The shadow is detachment, overthinking and restlessness, so listening to the body and feelings brings balance.",
+   "weak": "Little Air can make objectivity, social ease or putting thoughts into words more difficult. You may react emotionally or practically before reflecting. Reading, discussion, writing and seeking other viewpoints strengthen perspective and help you step back from situations."
+  },
+  "Water": {
+   "strong": "A strong Water emphasis brings deep sensitivity, intuition and empathy. You feel the mood of a room and remember emotional undercurrents. The shadow is moodiness, absorbing others' feelings and withdrawal, so boundaries and healthy emotional outlets are essential.",
+   "weak": "Little Water can make emotions harder to identify, express or tolerate, in yourself or others. You may seem cool or rationalise feelings away. Creative work, honest relationships, and giving yourself time to reflect gradually build emotional fluency and trust in intuition."
+  }
+ },
+ "modalities": {
+  "Cardinal": {
+   "strong": "A strong Cardinal emphasis shows a natural initiator who starts projects, takes the lead and pushes things into motion. You respond well to challenges and fresh beginnings. The shadow is impatience and losing interest before completion, so finishing deserves as much attention as starting.",
+   "weak": "Little Cardinal energy can make starting things and taking the initiative difficult. You may wait for circumstances or others to set the direction. Practising decisive first steps, setting deadlines and acting before you feel fully ready builds momentum."
+  },
+  "Fixed": {
+   "strong": "A strong Fixed emphasis gives persistence, loyalty and remarkable staying power. You finish what you begin and hold to your values under pressure. The shadow is stubbornness and resistance to change, so deliberately testing new approaches keeps that strength from hardening into rigidity.",
+   "weak": "Little Fixed energy can make follow-through, consistency and holding your ground harder. You may adapt easily but struggle with long commitments. Building routines, protecting priorities and learning to finish what you start gives your plans the staying power they lack."
+  },
+  "Mutable": {
+   "strong": "A strong Mutable emphasis brings adaptability, versatility and an easy way of adjusting to people and circumstances. You learn quickly and see several sides of a situation. The shadow is scattered focus and indecision, so choosing priorities and setting boundaries is important.",
+   "weak": "Little Mutable energy can make change, compromise and multitasking uncomfortable. You may prefer a clear plan and find unexpected shifts stressful. Practising flexibility, staying curious about alternatives and allowing room for improvisation helps you handle transitions more gracefully."
+  }
+ },
+ "hemispheres": {
+  "East": "A concentration of planets in the eastern half, around the Ascendant, suggests self-direction and initiative. You tend to shape circumstances rather than wait for them, and your life reflects personal choices. The lesson is to remain open to input and cooperation from others.",
+  "West": "A concentration of planets in the western half suggests a life shaped through relationships and circumstance. You develop through partnerships, adaptation and responding to what others bring. Strengths include diplomacy and cooperation; the lesson is to claim your own needs and initiate when required.",
+  "North": "A concentration of planets below the horizon points to a private, subjective emphasis. Home, family, inner life and emotional foundations carry unusual weight, and recognition tends to come later or quietly. The lesson is to bring that inner depth into the wider world.",
+  "South": "A concentration of planets above the horizon shows an outward, public emphasis. Career, reputation, social engagement and visible achievement tend to take priority, and you are drawn to the wider stage. The lesson is to protect inner life, rest and personal relationships."
+ }
+}

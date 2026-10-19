@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+dist/
+vendor/pyodide-*/
+tests/golden/out/
+.DS_Store
