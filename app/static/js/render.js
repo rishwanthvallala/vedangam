@@ -95,18 +95,19 @@ function chartFromVarga(v, title, sub, extra = {}) {
     indianChart({ style: STYLE, lagnaSign: signs.Lagna, signs, center: tx(title), ...extra }));
 }
 
-function chartFromPoints(points, title, sub, { lagnaSign, houseOf, houseSigns, withDeg = true, special = [] } = {}) {
+// noDeg: points placed by sign only (Arudhas), whose longitude is just the start of the sign
+function chartFromPoints(points, title, sub, { lagnaSign, houseOf, houseSigns, cusps, withDeg = true, special = [], noDeg = [] } = {}) {
   const signs = {}, degs = {}, retro = {};
   for (const [n, p] of Object.entries(points)) {
     signs[n] = p.sign;
-    if (withDeg && p.lon !== undefined) degs[n] = p.lon % 30;
+    if (withDeg && p.lon !== undefined && p.lon !== null && !noDeg.includes(n)) degs[n] = p.lon % 30;
     if (p.retro && !["Rahu", "Ketu"].includes(n)) retro[n] = true;
   }
   const ls = lagnaSign ?? points.Lagna.sign;
   return h("figure", { class: "chart-card" },
     h("figcaption", {}, title, sub ? h("small", {}, sub) : null),
     indianChart({ style: STYLE, lagnaSign: ls, signs, degs, retro,
-      special: new Set(special), houseOf, houseSigns, center: tx(title).replace(/ \(/, "\n(") }));
+      special: new Set(special), houseOf, houseSigns, cusps, center: tx(title).replace(/ \(/, "\n(") }));
 }
 
 function planetName(r) {
@@ -219,12 +220,11 @@ function transitTable(g, title = "Current transits (Gochara)") {
 function parashara(res) {
   const lagna = res.planets[0];
   const moonSign = res.points.Moon.sign;
-  const moonVarga = { signs: { ...res.vargas.D1.signs, Lagna: moonSign } };
   const ov = () => h("div", {},
     h("div", { class: "grid-charts" },
       chartFromPoints(res.points, "Rasi chart (D1)", t("Lagna {s} {d}", { s: lagna.sign_name, d: lagna.dms })),
       chartFromVarga(res.vargas.D9, "Navamsa (D9)", "Spouse, dharma, inner strength"),
-      chartFromVarga(moonVarga, "Chandra lagna", "Rasi chart read from the Moon"),
+      chartFromPoints(res.points, "Chandra lagna", "Rasi chart read from the Moon", { lagnaSign: moonSign }),
       chartFromPoints(res.points, "Bhava chalit", "Sripati bhava placement",
         { houseOf: res.bhava_chalit, withDeg: false })),
     section("Key highlights", null, h("ul", { class: "highlights" }, res.reading.highlights.map((x) => h("li", {}, x)))),
@@ -292,7 +292,7 @@ function parashara(res) {
 function parasharaPanels(res) {
   const cat = {};
   for (const [k, v] of Object.entries(res.vargas)) cat[k] = { title: `${k} ${v.name.split("–")[0].trim()}`, render: () => chartFromVarga(v, k) };
-  cat.chandra = { title: "Chandra lagna", render: () => chartFromVarga({ signs: { ...res.vargas.D1.signs, Lagna: res.points.Moon.sign } }, "Chandra lagna") };
+  cat.chandra = { title: "Chandra lagna", render: () => chartFromPoints(res.points, "Chandra lagna", null, { lagnaSign: res.points.Moon.sign }) };
   cat.chalit = { title: "Bhava chalit", render: () => chartFromPoints(res.points, "Bhava chalit", null, { houseOf: res.bhava_chalit, withDeg: false }) };
   cat.planets = { title: "Planetary positions", render: () => planetsTable(res.planets) };
   cat.highlights = { title: "Key highlights", render: () => h("ul", { class: "highlights" }, res.reading.highlights.map((x) => h("li", {}, x))) };
@@ -536,8 +536,8 @@ function kpOverview(res, isHorary) {
   return h("div", {},
     h("div", { class: "grid-charts" },
       chartFromPoints(res.points, "Rasi chart", t("Lagna {s} {d}", { s: lag.sign_name, d: lag.dms })),
-      chartFromPoints(res.points, "Bhava (cuspal) chart", res.rotation > 1 ? t("Rotated: house {n} as the 1st", { n: res.rotation }) : "Placidus cusps; planets by KP house; H marks cusps",
-        { houseOf: res.bhava_of, houseSigns, withDeg: true })),
+      chartFromPoints(res.points, "Bhava (cuspal) chart", res.rotation > 1 ? t("Rotated: house {n} as the 1st", { n: res.rotation }) : "Roman numerals I–XII mark the Placidus cusps",
+        { houseOf: res.bhava_of, houseSigns, cusps: res.cusp_lons })),
     rpBlock(res.ruling_planets.now, isHorary ? "Ruling planets at judgment" : "Ruling planets now",
       isHorary ? null : "Computed for this moment at the birth place. KP uses these to fix timing."),
     section("Planets: star, sub and sub-sub lords", null, planetsTable(res.planets, { kp: true })),
@@ -653,7 +653,7 @@ function jaimini(res) {
   const AL = j.arudhas.AL.sign, UL = j.arudhas.UL.sign;
   const ov = () => h("div", {},
     h("div", { class: "grid-charts" },
-      chartFromPoints(res.points, "Rasi with Arudhas", "AL Arudha lagna, UL Upapada, HL Hora lagna, GL Ghati lagna", { special: ["AL", "UL", "HL", "GL"], withDeg: false }),
+      chartFromPoints(res.points, "Rasi with Arudhas", "AL Arudha lagna, UL Upapada, HL Hora lagna, GL Ghati lagna", { special: ["AL", "UL", "HL", "GL"], noDeg: ["AL", "UL"] }),
       chartFromVarga(res.vargas.D9, "Navamsa (Karakamsha)", t("Karakamsha in {s}", { s: j.karakamsha.sign })),
       chartFromVarga({ signs: { ...res.vargas.D9.signs, Lagna: j.karakamsha.sign_index } }, "Swamsha chart", "Navamsa read from the Karakamsha")),
     section("Chara karakas", t("Ranked by degree within sign ({x}).", { x: res.settings.karaka_scheme }),

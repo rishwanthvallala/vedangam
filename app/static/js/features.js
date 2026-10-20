@@ -20,7 +20,7 @@ function pointsChart(points, title, sub, opts = {}) {
   const signs = {}, degs = {}, retro = {};
   for (const [n, p] of Object.entries(points)) {
     signs[n] = p.sign;
-    if (p.lon !== undefined && opts.withDeg !== false) degs[n] = p.lon % 30;
+    if (p.lon !== undefined && opts.withDeg !== false && !(opts.noDeg || []).includes(n)) degs[n] = p.lon % 30;
     if (p.retro && !["Rahu", "Ketu"].includes(n)) retro[n] = true;
   }
   return h("figure", { class: "chart-card" }, h("figcaption", {}, title, sub ? h("small", {}, sub) : null),
@@ -200,7 +200,7 @@ export function varshaphalDefs(res) {
   return [
     { id: "vchart", label: "Varsha chart", render: () => h("div", {},
       section(t("Varshaphal {y} (age {a})", { y: v.year, a: v.age }), t("Varsha Pravesha {m} at {p}.", { m: v.moment, p: v.place }),
-        h("div", { class: "grid-charts" }, pointsChart(v.points, "Varsha chart", v.moment, { special: ["Muntha"] })),
+        h("div", { class: "grid-charts" }, pointsChart(v.points, "Varsha chart", v.moment, { special: ["Muntha"], noDeg: ["Muntha"] })),
         kv([["Muntha", t("{s} in house {h}, lord {l}", { s: v.muntha.sign_name, h: v.muntha.house, l: v.muntha.lord })],
           ["Year lord (Varshesha)", h("b", {}, tx(v.year_lord.planet))]]),
         h("p", { class: "sub", style: "margin-top:8px" }, v.year_lord.reason)),
@@ -251,9 +251,13 @@ function animator(fr) {
   const play = h("button", { type: "button", class: "ghost" }, t("Play"));
   let timer = null, i = 0;
   const draw = () => {
-    const signs = { Lagna: fr.natal_lagna }, retro = {};
-    for (const [p, arr] of Object.entries(fr.lon)) { signs[p] = Math.floor(arr[i] / 30) % 12; if (fr.retro[p][i]) retro[p] = true; }
-    chartBox.replaceChildren(indianChart({ style: STYLE, lagnaSign: fr.natal_lagna, signs, retro, center: fr.dates[i] }));
+    const signs = { Lagna: fr.natal_lagna }, degs = {}, retro = {};
+    for (const [p, arr] of Object.entries(fr.lon)) {
+      signs[p] = Math.floor(arr[i] / 30) % 12;
+      degs[p] = arr[i] % 30;
+      if (fr.retro[p][i]) retro[p] = true;
+    }
+    chartBox.replaceChildren(indianChart({ style: STYLE, lagnaSign: fr.natal_lagna, signs, degs, retro, center: fr.dates[i] }));
     label.textContent = fr.dates[i];
     slider.value = i;
   };

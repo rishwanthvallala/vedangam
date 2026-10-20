@@ -29,6 +29,30 @@ function text(parent, x, y, s, cls, attrs = {}) {
   return t;
 }
 
+const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+
+/** Position within a sign as D°MM', the tables' D°MM'SS" without the seconds. */
+export function degMin(x) {
+  const s = Math.round(x * 3600);
+  return `${Math.floor(s / 3600)}°${String(Math.floor((s % 3600) / 60)).padStart(2, "0")}'`;
+}
+
+/** One chart entry: label, then degrees (D°MM', or whole degrees when the box is crowded), then R. */
+function drawItem(root, x, y, it, { size, short }, attrs = {}) {
+  const cls = "pl" + (it.retro ? " retro" : "") + (it.special ? " special" : "") + (it.cusp ? " cusp no-tr" : "");
+  const t = svg("text", { x, y, class: cls, "text-anchor": "middle", style: `font-size:${size}px`, ...attrs }, root);
+  t.textContent = it.label;
+  if (it.deg !== undefined && it.deg !== null) {
+    const d = svg("tspan", { class: "deg", dx: 2, style: `font-size:${(size * 0.76).toFixed(1)}px` }, t);
+    d.textContent = short ? `${Math.floor(it.deg)}°` : degMin(it.deg);
+  }
+  if (it.retro) {
+    const rr = svg("tspan", { dx: 1, "font-size": 9, "baseline-shift": "super" }, t);
+    rr.textContent = "R";
+  }
+  return t;
+}
+
 // ------------------------------------------------------------------ North Indian
 const N_POLY = {
   1: [[200, 0], [100, 100], [200, 200], [300, 100]], 2: [[0, 0], [200, 0], [100, 100]],
@@ -46,7 +70,7 @@ const NARROW = new Set([2, 3, 5, 6, 8, 9, 11, 12]);
 
 /**
  * houseSigns: array[12] sign index (0-11) for houses 1..12
- * items: {house: [{label, retro, special, deg}]}
+ * items: {house: [{label, retro, special, cusp, deg}]}
  */
 export function northChart({ houseSigns, items, center, size = 400 }) {
   const root = svg("svg", { viewBox: "-2 -2 404 404", class: "kundali", role: "img",
@@ -57,35 +81,31 @@ export function northChart({ houseSigns, items, center, size = 400 }) {
   for (let h = 1; h <= 12; h++) {
     const [sx, sy] = N_SIGNNO[h];
     text(root, sx, sy, String(houseSigns[h - 1] + 1), "signno", { "text-anchor": "middle", "dominant-baseline": "middle" });
-    placeItems(root, N_ANCHOR[h], items[h] || [], NARROW.has(h) ? 2 : 3, NARROW.has(h));
+    placeItems(root, N_ANCHOR[h], items[h] || [], NARROW.has(h));
   }
   return root;
 }
 
-function placeItems(root, [ax, ay], list, perRowMax, narrow) {
+// Box layout: entries with D°MM' need a single column, so crowded boxes shrink the type and,
+// past what fits, fall back to two columns with whole degrees.
+function northLayout(n, narrow, withDeg) {
+  if (!withDeg) return { cols: n > 4 ? 2 : 1, size: n > 6 ? 11.5 : 13.5, lh: n > 6 ? 13 : 15.5, colW: narrow ? 34 : 44 };
+  if (n <= (narrow ? 4 : 6)) return { cols: 1, size: n <= 4 ? 13.5 : 12, lh: n <= 3 ? 15.5 : n === 4 ? 14.5 : 13.5 };
+  if (narrow) return { cols: 2, size: 11.5, lh: 13, colW: 36, short: true };
+  return { cols: 2, size: 12.5, lh: n > 8 ? 13 : 14.5, colW: 56, short: true };
+}
+
+function placeItems(root, [ax, ay], list, narrow) {
   if (!list.length) return;
   const n = list.length;
-  const cols = n > 4 ? 2 : 1;
-  const rows = Math.ceil(n / cols);
-  const lh = n > 6 ? 13 : 15.5;
-  const colW = narrow ? 34 : 44;
-  const y0 = ay - ((rows - 1) * lh) / 2;
+  const L = northLayout(n, narrow, list.some((it) => it.deg !== undefined && it.deg !== null));
+  const rows = Math.ceil(n / L.cols);
+  const y0 = ay - ((rows - 1) * L.lh) / 2;
   list.forEach((it, i) => {
-    const c = cols === 1 ? 0 : i % 2;
-    const r = cols === 1 ? i : Math.floor(i / 2);
-    const x = cols === 1 ? ax : ax + (c === 0 ? -colW / 2 : colW / 2);
-    const y = y0 + r * lh;
-    const t = svg("text", { x, y, class: "pl" + (it.retro ? " retro" : "") + (it.special ? " special" : ""),
-      "text-anchor": "middle", "dominant-baseline": "middle", "font-size": n > 6 ? 11.5 : undefined }, root);
-    t.textContent = it.label;
-    if (it.deg !== undefined && it.deg !== null && n <= 6) {
-      const d = svg("tspan", { class: "deg", dx: 2 }, t);
-      d.textContent = Math.floor(it.deg);
-    }
-    if (it.retro) {
-      const rr = svg("tspan", { dx: 1, "font-size": 9, "baseline-shift": "super" }, t);
-      rr.textContent = "R";
-    }
+    const c = L.cols === 1 ? 0 : i % 2;
+    const r = L.cols === 1 ? i : Math.floor(i / 2);
+    const x = L.cols === 1 ? ax : ax + (c === 0 ? -L.colW / 2 : L.colW / 2);
+    drawItem(root, x, y0 + r * L.lh, it, L, { "dominant-baseline": "middle" });
   });
 }
 
@@ -93,7 +113,17 @@ function placeItems(root, [ax, ay], list, perRowMax, narrow) {
 const S_CELL = { 11: [0, 0], 0: [1, 0], 1: [2, 0], 2: [3, 0], 3: [3, 1], 4: [3, 2], 5: [3, 3],
   6: [2, 3], 7: [1, 3], 8: [0, 3], 9: [0, 2], 10: [0, 1] };
 
-/** items: {signIndex: [{label, retro, special, deg}]} */
+function southLayout(n, withDeg) {
+  if (!withDeg) return { cols: n > 4 ? 2 : 1, size: n > 6 ? 11.5 : 13.5, lh: n > 8 ? 12 : 15, y0: 26 };
+  if (n <= 4) return { cols: 1, size: 13.5, lh: 15, y0: 26 };
+  if (n === 5) return { cols: 1, size: 12.5, lh: 13.5, y0: 24 };
+  if (n === 6) return { cols: 1, size: 11.5, lh: 11.6, y0: 21 };
+  if (n <= 8) return { cols: 2, size: 12, lh: 14.5, y0: 26, short: true };
+  if (n <= 10) return { cols: 2, size: 11.5, lh: 12.5, y0: 24, short: true };
+  return { cols: 2, size: 11, lh: 11, y0: 21, short: true };
+}
+
+/** items: {signIndex: [{label, retro, special, cusp, deg}]} */
 export function southChart({ lagnaSign, items, center, cellNotes = {} }) {
   const root = svg("svg", { viewBox: "-2 -2 404 404", class: "kundali", role: "img",
     "aria-label": center || "South Indian chart" });
@@ -109,25 +139,11 @@ export function southChart({ lagnaSign, items, center, cellNotes = {} }) {
     text(root, cx * 100 + 94, cy * 100 + 94, SIGN_SHORT[s], "signno", { "text-anchor": "end" });
     if (cellNotes[s]) text(root, cx * 100 + 6, cy * 100 + 94, cellNotes[s], "signno cusp-note");
     const list = items[s] || [];
-    const n = list.length;
-    const cols = n > 4 ? 2 : 1;
-    const lh = n > 8 ? 12 : 15;
+    const L = southLayout(list.length, list.some((it) => it.deg !== undefined && it.deg !== null));
     list.forEach((it, i) => {
-      const c = cols === 1 ? 0 : i % 2;
-      const r = cols === 1 ? i : Math.floor(i / 2);
-      const x = cx * 100 + (cols === 1 ? 50 : 27 + c * 46);
-      const y = cy * 100 + 26 + r * lh;
-      const t = svg("text", { x, y, class: "pl" + (it.retro ? " retro" : "") + (it.special ? " special" : ""),
-        "text-anchor": "middle", "font-size": n > 6 ? 11.5 : undefined }, root);
-      t.textContent = it.label;
-      if (it.deg !== undefined && it.deg !== null && n <= 4) {
-        const d = svg("tspan", { class: "deg", dx: 2 }, t);
-        d.textContent = Math.floor(it.deg);
-      }
-      if (it.retro) {
-        const rr = svg("tspan", { dx: 1, "font-size": 9, "baseline-shift": "super" }, t);
-        rr.textContent = "R";
-      }
+      const c = L.cols === 1 ? 0 : i % 2;
+      const r = L.cols === 1 ? i : Math.floor(i / 2);
+      drawItem(root, cx * 100 + (L.cols === 1 ? 50 : 27 + c * 46), cy * 100 + L.y0 + r * L.lh, it, L);
     });
   }
   if (center) {
@@ -150,44 +166,55 @@ export function southChart({ lagnaSign, items, center, cellNotes = {} }) {
 
 /**
  * Generic: build an Indian chart from {name: signIndex} placements.
- * style: 'north' | 'south'. lagnaSign: sign index. degs: {name: degInSign}
+ * style: 'north' | 'south'. lagnaSign: sign of the first house. degs: {name: degInSign}
+ * houseOf: {name: house} places planets by house (Bhava chalit, KP). cusps: the twelve cusp
+ * longitudes, drawn as I–XII with their degrees (KP cuspal chart).
  */
 export function indianChart({ style, lagnaSign, signs, degs = {}, retro = {}, special = new Set(),
-  center = "", houseOf = null, houseSigns = null }) {
+  center = "", houseOf = null, houseSigns = null, cusps = null }) {
   const label = (n) => SHORT[n] || n;
   const order = ["Lagna", "Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn", "Rahu",
     "Ketu", "Uranus", "Neptune", "Pluto"];
-  const names = Object.keys(signs).sort((a, b) => {
+  const names = Object.keys(signs).filter((n) => n !== "Lagna").sort((a, b) => {
     const ia = order.indexOf(a), ib = order.indexOf(b);
     return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
   });
+  const item = (n) => ({ label: label(n), retro: retro[n], special: special.has(n), deg: degs[n] });
+  const cusp = (c, i) => ({ label: ROMAN[i], cusp: true, deg: c % 30 });
+  // the Ascendant sits in its own sign; lagnaSign may differ (Chandra lagna is read from the Moon)
+  const asc = { label: "Asc", special: true, deg: degs.Lagna };
+  const ascSign = signs.Lagna ?? lagnaSign;
   const hs = houseSigns || Array.from({ length: 12 }, (_, i) => (lagnaSign + i) % 12);
   if (style === "south") {
-    // Rasi charts place planets by sign. Bhava/cuspal charts place each planet in the sign
-    // of its house cusp, and each cell is labelled with the cusp numbers that fall in it.
     const items = {};
-    for (const n of names) {
-      if (n === "Lagna") continue;
-      let sg = signs[n];
-      if (houseOf) {
-        const h = houseOf[n];
-        if (!h) continue;
-        sg = hs[h - 1];
-      }
-      (items[sg] ||= []).push({ label: label(n), retro: retro[n], special: special.has(n), deg: houseOf ? undefined : degs[n] });
+    if (cusps) {
+      // KP chart: planets in their own signs and the cusps I–XII in theirs, each box in zodiac order,
+      // so a planet's house reads off the cusp degrees beside it
+      for (const n of names) (items[signs[n]] ||= []).push(item(n));
+      cusps.forEach((c, i) => (items[Math.floor(c / 30) % 12] ||= []).push(cusp(c, i)));
+      for (const list of Object.values(items)) list.sort((a, b) => a.deg - b.deg);
+      return southChart({ lagnaSign: Math.floor(cusps[0] / 30) % 12, items, center });
     }
-    const ls = houseOf ? hs[0] : lagnaSign;
-    items[ls] = [{ label: "Asc", special: true }, ...(items[ls] || [])];
-    const cellNotes = {};
-    if (houseOf) hs.forEach((sg, i) => { cellNotes[sg] = (cellNotes[sg] ? cellNotes[sg] + "," : "H") + (i + 1); });
-    return southChart({ lagnaSign: ls, items, center, cellNotes });
+    if (houseOf) {
+      // Bhava chalit: each planet moves to the sign of its house, so the box is no longer its
+      // sign and degrees would mislead; each box is labelled with the houses that fall in it
+      for (const n of names) if (houseOf[n]) (items[hs[houseOf[n] - 1]] ||= []).push({ ...item(n), deg: undefined });
+      items[hs[0]] = [{ label: "Asc", special: true }, ...(items[hs[0]] || [])];
+      const cellNotes = {};
+      hs.forEach((sg, i) => { cellNotes[sg] = (cellNotes[sg] ? cellNotes[sg] + "," : "H") + (i + 1); });
+      return southChart({ lagnaSign: hs[0], items, center, cellNotes });
+    }
+    for (const n of names) (items[signs[n]] ||= []).push(item(n));
+    items[ascSign] = [asc, ...(items[ascSign] || [])];
+    return southChart({ lagnaSign, items, center });
   }
   const items = {};
+  if (cusps) cusps.forEach((c, i) => { items[i + 1] = [cusp(c, i)]; });
+  else if (!houseOf && degs.Lagna !== undefined) items[((ascSign - lagnaSign + 12) % 12) + 1] = [asc];
   for (const n of names) {
-    if (n === "Lagna") continue;
     const h = houseOf ? houseOf[n] : ((signs[n] - lagnaSign + 12) % 12) + 1;
     if (!h) continue;
-    (items[h] ||= []).push({ label: label(n), retro: retro[n], special: special.has(n), deg: degs[n] });
+    (items[h] ||= []).push(item(n));
   }
   return northChart({ houseSigns: hs, items, center });
 }

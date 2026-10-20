@@ -284,7 +284,8 @@ svg.kundali .cusp-note { fill: var(--brass); font-size: 11px; }
 svg.kundali .pl { fill: var(--ink); font-size: 13.5px; font-family: var(--sans); font-weight: 500; }
 svg.kundali .pl.retro { fill: var(--kumkum); }
 svg.kundali .pl.special { fill: var(--brass); font-weight: 400; }
-svg.kundali .pl .deg { fill: var(--ink-3); font-size: 10px; font-weight: 400; }
+svg.kundali .pl .deg { fill: var(--ink-3); font-weight: 400; font-variant-numeric: tabular-nums; }
+svg.kundali .pl.cusp { fill: var(--lapis); font-weight: 600; }
 svg.kundali .center { fill: var(--ink-2); font-family: var(--serif); font-size: 15px; }
 svg.wheel { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
 svg.wheel .ring { fill: none; stroke: var(--rule-strong); }
